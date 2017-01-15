@@ -1,26 +1,26 @@
 {
-    "name": "zikula/bootstrap-theme",
+    "name": "rk/indaus-theme",
     "version": "1.0.0",
     "description": "Bootstrap based theme",
     "type": "zikula-theme",
     "license": "LGPL-3.0+",
     "authors": [
         {
-            "name": "Zikula",
-            "homepage": "http://zikula.org/"
+            "name": "RK",
+            "homepage": "http://k62.de/"
         }
     ],
     "autoload": {
-        "psr-4": { "Zikula\\BootstrapTheme\\": "" }
+        "psr-4": { "RK\\IndausTheme\\": "" }
     },
     "require": {
         "php": ">=5.4.1"
     },
     "extra": {
         "zikula" : {
-            "core-compatibility": ">=1.4.1",
-            "class": "Zikula\\BootstrapTheme\\ZikulaBootstrapTheme",
-            "displayname": "Bootstrap",
+            "core-compatibility": ">=1.4.5",
+            "class": "RK\\IndausTheme\\RKIndausTheme",
+            "displayname": "Indaus",
             "capabilities": {
                 "user": true,
                 "admin": true

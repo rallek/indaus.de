@@ -1,5 +1,5 @@
 ##
-# ZikulaBootstrapTheme config
+# RKIndausTheme config
 ##
 admin:
   page: ":admin.html.twig"

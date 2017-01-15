@@ -1,6 +1,6 @@
 {*
  this doesn't require surrounding divs because the menu is added to existing navbar
- see themes/BootstrapTheme/Resources/views/Include/main_menu.html.twig
+ see themes/RK/IndausTheme/Resources/views/Include/main_menu.html.twig
 *}
 {menu from=$menuitems item='item' name='extmenu' class='nav navbar-nav'}
     {if $item.name ne '' && $item.url ne ''}

@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Zikula\BootstrapTheme;
+namespace RK\IndausTheme;
 
 use Zikula\Bundle\CoreBundle\Bundle\AbstractCoreTheme;
 
-class ZikulaBootstrapTheme extends AbstractCoreTheme
+class RKIndausTheme extends AbstractCoreTheme
 {
 }
