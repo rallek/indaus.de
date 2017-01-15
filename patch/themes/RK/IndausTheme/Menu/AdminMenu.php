@@ -1,7 +1,8 @@
 <?php
 
 /*
- * This file is part of the Zikula package.
+ * This file was part of the Zikula package.
+ * it is modified by RK
  *
  * Copyright Zikula Foundation - http://zikula.org/
  *
@@ -9,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Zikula\BootstrapTheme\Menu;
+namespace RK\IndausTheme\Menu;
 
 use Knp\Menu\FactoryInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
