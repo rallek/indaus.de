@@ -663,7 +663,7 @@ msgid "zikulathememodule_var_var"
 msgstr "/admin/var/{themeName}"
 
 msgid "zikulausersmodule_access_login"
-msgstr "/login/{returnUrl}"
+msgstr "/login"
 
 msgid "zikulausersmodule_access_logout"
 msgstr "/logout/{returnUrl}"
