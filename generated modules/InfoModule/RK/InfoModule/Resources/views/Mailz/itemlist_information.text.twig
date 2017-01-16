@@ -1,8 +1,0 @@
-{# Purpose of this template: Display informations in text mailings #}
-{% for information in items %}
-{{ information.getTitleFromDisplayPattern() }}
-{{ url('rkinfomodule_information_display', { 'id': information.id }) }}
------
-{% else %}
-{{ __('No informations found.') }}
-{% endfor %}

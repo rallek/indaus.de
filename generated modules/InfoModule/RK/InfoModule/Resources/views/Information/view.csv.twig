@@ -1,8 +1,0 @@
-{# purpose of this template: informations view csv view #}
-{% spaceless %}"{{ __('Title') }}";"{{ __('The description') }}";"{{ __('Workflow state') }}"
-{% endspaceless %}
-{% for information in items %}
-{% spaceless %}
-    "{{ information.title }}";"{{ information.theDescription|safeHtml }}";"{{ information.workflowState|rkinfomodule_objectState(false)|lower }}"
-{% endspaceless %}
-{% endfor %}

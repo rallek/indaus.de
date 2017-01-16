@@ -1,0 +1,48 @@
+application "Info" {
+    documentation "with this module Indaus will create some translatable pages."
+    vendor "RK"
+    author "Ralf Koester"
+    email "ralf@familie-koester.de"
+    url "http://k62.de"
+    version "0.1.0"
+    prefix "info"
+    generatorSettings {
+        settingsContainer "Settings"
+        generateAccountApi false
+        generateMailzApi false
+        generateModerationBlock false
+        generateNewsletterPlugin false
+        generateModerationPanel false
+        generatePendingContentSupport false
+        generateTagSupport false
+        generateMultiHookNeedles false
+        generateRssTemplates false
+        generateAtomTemplates false
+        generateCsvTemplates false
+        generateXmlTemplates false
+        generateJsonTemplates false
+        generateKmlTemplates false
+        generateIcsTemplates false
+        versionAllGeneratedFiles false
+        generateTests false
+    }
+    entities {
+        entity "information" leading {
+            nameMultiple "informations"
+            displayPattern "#title#"
+            fields {
+                string "title" translatable,
+                text "theDescription" translatable {
+                    displayType VIEW_DISPLAY
+                    length 8000
+                }
+            }
+            actions {
+                mainAction "Index",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        }
+    }
+    }
