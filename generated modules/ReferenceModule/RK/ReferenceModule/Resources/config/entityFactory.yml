@@ -1,0 +1,6 @@
+services:
+    # Entity factory class
+    rk_reference_module.entity_factory:
+        class: RK\ReferenceModule\Entity\Factory\ReferenceFactory
+        arguments:
+            - "@doctrine.orm.default_entity_manager"

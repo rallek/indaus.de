@@ -1,0 +1,12 @@
+services:
+    # Twig extension
+    rk_reference_module.twig_extension:
+        class: RK\ReferenceModule\Twig\TwigExtension
+        arguments:
+            - "@translator.default"
+            - "@zikula_extensions_module.api.variable"
+            - "@rk_reference_module.workflow_helper"
+            - "@rk_reference_module.listentries_helper"
+        public: false
+        tags:
+            - { name: twig.extension }

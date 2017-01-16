@@ -1,0 +1,45 @@
+{
+    "name": "rk/reference-module",
+    "version": "0.1.0",
+    "description": "This module will be used to show the activities for the indaus company",
+    "type": "zikula-module",
+    "license": "LGPL-3.0+",
+    "authors": [
+        {
+            "name": "Ralf Koester",
+            "email": "ralf@familie-koester.de",
+            "homepage": "http://k62.de",
+            "role": "owner"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "RK\\ReferenceModule\\": "" }
+    },
+    "require": {
+        "php": ">=5.4.1"
+    },
+    "suggest": {
+    },
+    "extra": {
+        "zikula": {
+            "core-compatibility": ">=1.4.5",
+            "class": "RK\\ReferenceModule\\RKReferenceModule",
+            "displayname": "Reference",
+            "url": "reference",
+            "capabilities": {
+                "user": {"route": "rkreferencemodule_activity_index"},
+                "admin": {"route": "rkreferencemodule_activity_adminindex"},
+                "searchable": {"class": "RK\\ReferenceModule\\Helper\\SearchHelper"},
+                "hook_subscriber": {"class": "RK\\ReferenceModule\\Container\\HookContainer"}
+            },
+            "securityschema": {
+                "RKReferenceModule::": "::",
+                "RKReferenceModule:ItemListBlock:": "Block title::",
+                "RKReferenceModule:AttachedImage:": "AttachedImage ID::",
+                "RKReferenceModule:Activity:": "Activity ID::",
+                "RKReferenceModule:AttachedImage:Activity": "AttachedImage ID:Activity ID:",
+                "RKReferenceModule::Ajax": "::"
+            }
+        }
+    }
+}

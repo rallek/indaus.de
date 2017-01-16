@@ -1,0 +1,68 @@
+services:
+    # Helper classes
+    rk_reference_module.controller_helper:
+        class: RK\ReferenceModule\Helper\ControllerHelper
+        arguments:
+            - "@translator.default"
+            - "@request_stack"
+            - "@session"
+            - "@logger"
+            - "@form.factory"
+            - "@zikula_extensions_module.api.variable"
+            - "@rk_reference_module.entity_factory"
+            - "@rk_reference_module.model_helper"
+            - "@rk_reference_module.selection_helper"
+            - "@rk_reference_module.image_helper"
+    
+    rk_reference_module.hook_helper:
+        class: RK\ReferenceModule\Helper\HookHelper
+        arguments:
+            - "@hook_dispatcher"
+    
+    rk_reference_module.image_helper:
+        class: RK\ReferenceModule\Helper\ImageHelper
+        arguments:
+            - "@translator.default"
+            - "@session"
+            - "@zikula_extensions_module.api.variable"
+    
+    rk_reference_module.listentries_helper:
+        class: RK\ReferenceModule\Helper\ListEntriesHelper
+        arguments:
+            - "@translator.default"
+    
+    rk_reference_module.model_helper:
+        class: RK\ReferenceModule\Helper\ModelHelper
+        arguments:
+            - "@rk_reference_module.entity_factory"
+    
+    rk_reference_module.selection_helper:
+        class: RK\ReferenceModule\Helper\SelectionHelper
+        arguments:
+            - "@translator.default"
+            - "@rk_reference_module.entity_factory"
+    
+    rk_reference_module.upload_helper:
+        class: RK\ReferenceModule\Helper\UploadHelper
+        arguments:
+            - "@translator.default"
+            - "@session"
+            - "@logger"
+            - "@zikula_users_module.current_user"
+            - "@zikula_extensions_module.api.variable"
+            - "%datadir%"
+    
+    rk_reference_module.view_helper:
+        class: RK\ReferenceModule\Helper\ViewHelper
+        arguments:
+            - "@templating"
+            - "@request_stack"
+            - "@zikula_permissions_module.api.permission"
+            - "@zikula_extensions_module.api.variable"
+            - "@rk_reference_module.controller_helper"
+    
+    rk_reference_module.workflow_helper:
+        class: RK\ReferenceModule\Helper\WorkflowHelper
+        arguments:
+            - "@translator.default"
+            - "@rk_reference_module.listentries_helper"
