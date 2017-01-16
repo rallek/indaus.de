@@ -1,0 +1,13 @@
+{# Purpose of this template: Display activities within an external context #}
+<dl>
+    {% for activity in items %}
+        <dt>{{ activity.getTitleFromDisplayPattern() }}</dt>
+        {% if activity.teaserDescription %}
+            <dd>{{ activity.teaserDescription|striptags|truncate(200, true, '&hellip;') }}</dd>
+        {% endif %}
+        <dd><a href="{{ path('rkreferencemodule_activity_display', { 'id': activity.id }) }}">{{ __('Read more') }}</a>
+        </dd>
+    {% else %}
+        <dt>{{ __('No entries found.') }}</dt>
+    {% endfor %}
+</dl>

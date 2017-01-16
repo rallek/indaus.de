@@ -1,0 +1,16 @@
+{# Purpose of this template: Display item information for previewing from other modules #}
+<dl id="activity{{ activity.id }}">
+<dt>{{ activity.getTitleFromDisplayPattern()|notifyFilters('reference.filter_hooks.activities.filter') }}</dt>
+<dd>{% if activity.titleImageMeta|default %}
+<a href="{{ activity.titleImageUrl }}" title="{{ activity.getTitleFromDisplayPattern()|e('html_attr') }}"{% if activity.titleImageMeta.isImage %} class="lightbox"{% endif %}>
+{% if activity.titleImageMeta.isImage %}
+    {% set thumbOptions = attribute(thumbRuntimeOptions, 'activityTitleImage') %}
+    <img src="{{ activity.titleImage.getPathname()|imagine_filter('zkroot', thumbOptions) }}" alt="{{ activity.getTitleFromDisplayPattern()|e('html_attr') }}" width="{{ thumbOptions.thumbnail.size[0] }}" height="{{ thumbOptions.thumbnail.size[1] }}" class="img-thumbnail" />
+{% else %}
+    {{ __('Download') }} ({{ activity.titleImageMeta.size|rkreferencemodule_fileSize(activity.titleImage.getPathname(), false, false) }})
+{% endif %}
+</a>
+{% endif %}
+</dd>
+{% if activity.teaserDescription is not empty %}<dd>{{ activity.teaserDescription }}</dd>{% endif %}
+</dl>

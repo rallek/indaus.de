@@ -1,0 +1,48 @@
+{# Purpose of this template: Display one certain attached image within an external context #}
+<div id="attachedImage{$attachedImage.id}" class="rkreferencemodule-external-attachedimage">
+{% if displayMode == 'link' %}
+    <p class="rkreferencemodule-external-link">
+    <a href="{{ path('rkreferencemodule_attachedimage_display', { 'id': attachedImage.id }) }}" title="{{ attachedImage.getTitleFromDisplayPattern()|e('html_attr') }}">
+    {{ attachedImage.getTitleFromDisplayPattern()|notifyFilters('reference.filter_hooks.attachedimages.filter') }}
+    </a>
+    </p>
+{% endif %}
+{% if hasPermission('RKReferenceModule::', '::', 'ACCESS_EDIT') %}
+    {# for normal users without edit permission show only the actual file per default #}
+    {% if displayMode == 'embed' %}
+        <p class="rkreferencemodule-external-title">
+            <strong>{{ attachedImage.getTitleFromDisplayPattern()|notifyFilters('reference.filter_hooks.attachedimages.filter') }}</strong>
+        </p>
+    {% endif %}
+{% endif %}
+
+{% if displayMode == 'link' %}
+{% elseif displayMode == 'embed' %}
+    <div class="rkreferencemodule-external-snippet">
+        {% if attachedImage.addedImageMeta|default %}
+        <a href="{{ attachedImage.addedImageUrl }}" title="{{ attachedImage.getTitleFromDisplayPattern()|e('html_attr') }}"{% if attachedImage.addedImageMeta.isImage %} class="lightbox"{% endif %}>
+        {% if attachedImage.addedImageMeta.isImage %}
+            {% set thumbOptions = attribute(thumbRuntimeOptions, 'attachedImageAddedImage') %}
+            <img src="{{ attachedImage.addedImage.getPathname()|imagine_filter('zkroot', thumbOptions) }}" alt="{{ attachedImage.getTitleFromDisplayPattern()|e('html_attr') }}" width="{{ thumbOptions.thumbnail.size[0] }}" height="{{ thumbOptions.thumbnail.size[1] }}" class="img-thumbnail" />
+        {% else %}
+            {{ __('Download') }} ({{ attachedImage.addedImageMeta.size|rkreferencemodule_fileSize(attachedImage.addedImage.getPathname(), false, false) }})
+        {% endif %}
+        </a>
+        {% endif %}
+    </div>
+
+    {# you can distinguish the context like this: #}
+    {# % if source == 'contentType' %}
+        ...
+    {% elseif source == 'scribite' %}
+        ...
+    {% endif % #}
+
+    {# you can enable more details about the item: #}
+    {#
+        <p class="rkreferencemodule-external-description">
+            {% if attachedImage.shortDescription is not empty %}{{ attachedImage.shortDescription }}<br />{% endif %}
+        </p>
+    #}
+{% endif %}
+</div>

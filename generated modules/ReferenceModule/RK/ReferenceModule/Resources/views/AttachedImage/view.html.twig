@@ -1,0 +1,147 @@
+{# purpose of this template: attached images list view #}
+{% extends routeArea == 'admin' ? 'RKReferenceModule::adminBase.html.twig' : 'RKReferenceModule::base.html.twig' %}
+{% block title own ? __('My attached images') : __('Attached image list') %}
+{% block admin_page_icon 'list-alt' %}
+{% block content %}
+<div class="rkreferencemodule-attachedimage rkreferencemodule-view">
+
+    {{ block('page_nav_links') }}
+
+    {{ include('@RKReferenceModule/AttachedImage/viewQuickNav.html.twig', { workflowStateFilter: false }) }}{# see template file for available options #}
+
+    {% if routeArea == 'admin' %}
+    <form action="{{ path('rkreferencemodule_attachedimage_' ~ routeArea ~ 'handleselectedentries') }}" method="post" id="attachedImagesViewForm" class="form-horizontal" role="form">
+        <div>
+    {% endif %}
+        <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover{% if routeArea == 'admin' %} table-condensed{% endif %}">
+            <colgroup>
+                {% if routeArea == 'admin' %}
+                    <col id="cSelect" />
+                {% endif %}
+                <col id="cDisplayLanguage" />
+                <col id="cTitle" />
+                <col id="cAddedImage" />
+                <col id="cShortDescription" />
+                <col id="cItemActions" />
+            </colgroup>
+            <thead>
+            <tr>
+                {% if routeArea == 'admin' %}
+                    <th id="hSelect" scope="col" class="text-center">
+                        <input type="checkbox" class="rkreference-mass-toggle" />
+                    </th>
+                {% endif %}
+                <th id="hDisplayLanguage" scope="col" class="text-left">
+                    <a href="{{ sort.displayLanguage.url }}" title="{{ __f('Sort by %s', {'%s': 'display language'}) }}" class="{{ sort.displayLanguage.class }}">{{ __('Display language') }}</a>
+                </th>
+                <th id="hTitle" scope="col" class="text-left">
+                    <a href="{{ sort.title.url }}" title="{{ __f('Sort by %s', {'%s': 'title'}) }}" class="{{ sort.title.class }}">{{ __('Title') }}</a>
+                </th>
+                <th id="hAddedImage" scope="col" class="text-left z-order-unsorted">
+                    {{ __('Added image') }}
+                </th>
+                <th id="hShortDescription" scope="col" class="text-left">
+                    <a href="{{ sort.shortDescription.url }}" title="{{ __f('Sort by %s', {'%s': 'short description'}) }}" class="{{ sort.shortDescription.class }}">{{ __('Short description') }}</a>
+                </th>
+                <th id="hItemActions" scope="col" class="text-right z-order-unsorted">{{ __('Actions') }}</th>
+            </tr>
+            </thead>
+            <tbody>
+        
+        {% for attachedImage in items %}
+            <tr>
+                {% if routeArea == 'admin' %}
+                    <td headers="hSelect" class="text-center">
+                        <input type="checkbox" name="items[]" value="{{ attachedImage.id }}" class="rkreference-toggle-checkbox" />
+                    </td>
+                {% endif %}
+                <td headers="hDisplayLanguage" class="text-left">
+                    {{ attachedImage.displayLanguage|languageName }}
+                </td>
+                <td headers="hTitle" class="text-left">
+                    <a href="{{ path('rkreferencemodule_attachedimage_' ~ routeArea ~ 'display', { 'id': attachedImage.id }) }}" title="{{ __('View detail page')|e('html_attr') }}">{{ attachedImage.title|notifyFilters('rkreferencemodule.filterhook.attachedimages') }}</a>
+                </td>
+                <td headers="hAddedImage" class="text-left">
+                    {% if attachedImage.addedImageMeta|default %}
+                    <a href="{{ attachedImage.addedImageUrl }}" title="{{ attachedImage.getTitleFromDisplayPattern()|e('html_attr') }}"{% if attachedImage.addedImageMeta.isImage %} class="lightbox"{% endif %}>
+                    {% if attachedImage.addedImageMeta.isImage %}
+                        {% set thumbOptions = attribute(thumbRuntimeOptions, 'attachedImageAddedImage') %}
+                        <img src="{{ attachedImage.addedImage.getPathname()|imagine_filter('zkroot', thumbOptions) }}" alt="{{ attachedImage.getTitleFromDisplayPattern()|e('html_attr') }}" width="{{ thumbOptions.thumbnail.size[0] }}" height="{{ thumbOptions.thumbnail.size[1] }}" class="img-thumbnail" />
+                    {% else %}
+                        {{ __('Download') }} ({{ attachedImage.addedImageMeta.size|rkreferencemodule_fileSize(attachedImage.addedImage.getPathname(), false, false) }})
+                    {% endif %}
+                    </a>
+                    {% endif %}
+                </td>
+                <td headers="hShortDescription" class="text-left">
+                    {{ attachedImage.shortDescription|safeHtml }}
+                </td>
+                <td id="itemActions{{ attachedImage.id }}" headers="hItemActions" class="actions text-right nowrap z-w02">
+                    {% set itemActions = knp_menu_get('RKReferenceModule:ItemActionsMenu:menu', [], { entity: attachedImage, area: routeArea, context: 'view' }) %}
+                    <div class="dropdown">
+                        <a id="itemActions{{ attachedImage.id }}DropDownToggle" role="button" data-toggle="dropdown" data-target="#" href="javascript:void(0);" class="hidden dropdown-toggle"><i class="fa fa-tasks"></i> <span class="caret"></span></a>
+                        {{ knp_menu_render(itemActions, { template: 'ZikulaMenuModule:Override:actions.html.twig' }) }}
+                    </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr class="z-{{ routeArea == 'admin' ? 'admin' : 'data' }}tableempty">
+                <td class="text-left" colspan="{% if routeArea == 'admin' %}6{% else %}5{% endif %}">
+            {{ __('No attached images found.') }}
+              </td>
+            </tr>
+        {% endfor %}
+        
+            </tbody>
+        </table>
+        </div>
+        
+        {% if showAllEntries != 1 and pager|default %}
+            {{ pager({ rowcount: pager.amountOfItems, limit: pager.itemsPerPage, display: 'page', route: 'rkreferencemodule_attachedimage_' ~ routeArea ~ 'view'}) }}
+        {% endif %}
+    {% if routeArea == 'admin' %}
+            <fieldset>
+                <label for="rKReferenceModuleAction" class="col-sm-3 control-label">{{ __('With selected attached images') }}</label>
+                <div class="col-sm-6">
+                    <select id="rKReferenceModuleAction" name="action" class="form-control input-sm">
+                        <option value="">{{ __('Choose action') }}</option>
+                        <option value="delete" title="{{ __('Delete content permanently.') }}">{{ __('Delete') }}</option>
+                    </select>
+                </div>
+                <div class="col-sm-3">
+                    <input type="submit" value="{{ __('Submit') }}" class="btn btn-default btn-sm" />
+                </div>
+            </fieldset>
+        </div>
+    </form>
+    {% endif %}
+
+    {{ block('display_hooks') }}
+</div>
+{% endblock %}
+{% block page_nav_links %}
+    {% if canBeCreated %}
+        {% if hasPermission('RKReferenceModule:AttachedImage:', '::', 'ACCESS_EDIT') %}
+            {% set createTitle = __('Create attached image') %}
+            <a href="{{ path('rkreferencemodule_attachedimage_' ~ routeArea ~ 'edit') }}" title="{{ createTitle|e('html_attr') }}" class="fa fa-plus">{{ createTitle }}</a>
+        {% endif %}
+    {% endif %}
+    {% if showAllEntries == 1 %}
+        {% set linkTitle = __('Back to paginated view') %}
+        <a href="{{ path('rkreferencemodule_attachedimage_' ~ routeArea ~ 'view') }}" title="{{ linkTitle|e('html_attr') }}" class="fa fa-table">{{ linkTitle }}</a>
+    {% else %}
+        {% set linkTitle = __('Show all entries') %}
+        <a href="{{ path('rkreferencemodule_attachedimage_' ~ routeArea ~ 'view', { all: 1 }) }}" title="{{ linkTitle|e('html_attr') }}" class="fa fa-table">{{ linkTitle }}</a>
+    {% endif %}
+{% endblock %}
+{% block display_hooks %}
+    
+    {# here you can activate calling display hooks for the view page if you need it #}
+    {# % if routeArea != 'admin' %}
+        {% set hooks = notifyDisplayHooks(eventName='rkreferencemodule.ui_hooks.attachedimages.display_view', urlObject=currentUrlObject) %}
+        {% for providerArea, hook in hooks %}
+            {{ hook }}
+        {% endfor %}
+    {% endif % #}
+{% endblock %}

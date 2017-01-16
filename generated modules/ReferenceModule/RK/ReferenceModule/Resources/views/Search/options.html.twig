@@ -1,0 +1,10 @@
+{# Purpose of this template: Display search options #}
+<input type="hidden" id="rKReferenceModuleActive" name="active[RKReferenceModule]" value="1" />
+<div>
+    <input type="checkbox" id="active_rKReferenceModuleAttachedImages" name="rKReferenceModuleSearchTypes[]" value="attachedImage"{% if active_attachedImage %} checked="checked"{% endif %} />
+    <label for="active_rKReferenceModuleAttachedImages">{{ __('Attached images', 'rkreferencemodule') }}</label>
+</div>
+<div>
+    <input type="checkbox" id="active_rKReferenceModuleActivities" name="rKReferenceModuleSearchTypes[]" value="activity"{% if active_activity %} checked="checked"{% endif %} />
+    <label for="active_rKReferenceModuleActivities">{{ __('Activities', 'rkreferencemodule') }}</label>
+</div>

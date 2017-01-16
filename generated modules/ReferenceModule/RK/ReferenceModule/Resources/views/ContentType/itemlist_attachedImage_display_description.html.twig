@@ -1,0 +1,13 @@
+{# Purpose of this template: Display attached images within an external context #}
+<dl>
+    {% for attachedImage in items %}
+        <dt>{{ attachedImage.getTitleFromDisplayPattern() }}</dt>
+        {% if attachedImage.shortDescription %}
+            <dd>{{ attachedImage.shortDescription|striptags|truncate(200, true, '&hellip;') }}</dd>
+        {% endif %}
+        <dd><a href="{{ path('rkreferencemodule_attachedimage_display', { 'id': attachedImage.id }) }}">{{ __('Read more') }}</a>
+        </dd>
+    {% else %}
+        <dt>{{ __('No entries found.') }}</dt>
+    {% endfor %}
+</dl>
