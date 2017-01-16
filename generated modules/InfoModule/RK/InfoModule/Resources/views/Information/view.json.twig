@@ -1,0 +1,7 @@
+{# purpose of this template: informations view json view #}
+[
+{% for information in items %}
+    {% if not loop.first %},{% endif %}
+    {{ information.toJson() }}
+{% endfor %}
+]

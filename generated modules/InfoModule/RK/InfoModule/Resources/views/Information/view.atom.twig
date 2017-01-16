@@ -1,0 +1,56 @@
+{# purpose of this template: informations atom feed #}
+<?xml version="1.0" encoding="{% set charset = pageGetVar('meta.charset') %}{% if charset == 'ISO-8859-15' %}ISO-8859-1{% else %}{{ charset }}{% endif %}" ?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title type="text">{{ __('Latest informations') }}</title>
+    <subtitle type="text">{{ __('A direct feed showing the list of informations') }} - {{ getModVar('ZConfig', 'slogan') }}</subtitle>
+    <author>
+        <name>{{ getModVar('ZConfig', 'sitename') }}</name>
+    </author>
+{% set amountOfItems = items|length %}
+{% if amountOfItems > 0 %}
+{% set uniqueID %}tag:{{ app.request.getSchemeAndHttpHost()|replace({ 'http://': '', '/': '' }) }},{{ items.first.createdDate|date('Y-m-d') }}:{{ path('rkinfomodule_information_' ~ routeArea ~ 'display', { 'id': items.first.id }) }}{% endset %}
+    <id>{{ uniqueID }}</id>
+    <updated>{{ items[0].updatedDate|date('Y-m-dTH:M:SZ') }}</updated>
+{% endif %}
+    <link rel="alternate" type="text/html" hreflang="{{ app.request.locale }}" href="{{ url('rkinfomodule_information_' ~ routeArea ~ 'index') }}" />
+    <link rel="self" type="application/atom+xml" href="{{ app.request.getSchemeAndHttpHost() ~ app.request.getBasePath() }}" />
+    <rights>Copyright (c) {{ 'now'|date('Y') }}, {{ app.request.getSchemeAndHttpHost()|e }}</rights>
+{% for information in items %}
+    {{ block('entry') }}
+{% endfor %}
+</feed>
+{% block entry %}
+    <entry>
+        {{ block('entry_content') }}
+    </entry>
+{% endblock %}
+{% block entry_content %}
+    <title type="html">{{ information.getTitleFromDisplayPattern()|notifyFilters('rkinfomodule.filterhook.informations') }}</title>
+    <link rel="alternate" type="text/html" href="{{ url('rkinfomodule_information_' ~ routeArea ~ 'display', { 'id': information.id }) }}" />
+    {% set uniqueID %}tag:{{ app.request.getSchemeAndHttpHost()|replace({ 'http://': '', '/': '' }) }},{{ information.createdDate|date('Y-m-d') }}:{{ path('rkinfomodule_information_' ~ routeArea ~ 'display', { 'id': information.id }) }}{% endset %}
+    <id>{{ uniqueID }}</id>
+    {% if information.updatedDate|default %}
+        <updated>{{ information.updatedDate|date('Y-m-dTH:M:SZ') }}</updated>
+    {% endif %}
+    {% if information.createdDate|default %}
+        <published>{{ information.createdDate|date('Y-m-dTH:M:SZ') }}</published>
+    {% endif %}
+    {% if information.createdBy|default and information.createdBy.getUid() > 0 %}
+        {% set creatorAttributes = information.createdBy.getAttributes() %}
+        <author>
+           <name>{{ creatorAttributes.get('realname')|default(creatorAttributes.get('name'))|default(information.createdBy.getUname()) }}</name>
+           <uri>{{ creatorAttributes.get('_UYOURHOMEPAGE')|default('-') }}</uri>
+           <email>{{ information.createdBy.getEmail() }}</email>
+        </author>
+    {% endif %}
+    <summary type="html">
+        <![CDATA[
+        {{ information.theDescription|truncate(150, true, '&hellip;')|default('-') }}
+        ]]>
+    </summary>
+    <content type="html">
+        <![CDATA[
+        {{ information.title|replace({ '<br>': '<br />' }) }}
+        ]]>
+    </content>
+{% endblock %}

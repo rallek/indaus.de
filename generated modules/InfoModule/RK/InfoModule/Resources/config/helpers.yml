@@ -1,0 +1,59 @@
+services:
+    # Helper classes
+    rk_info_module.controller_helper:
+        class: RK\InfoModule\Helper\ControllerHelper
+        arguments:
+            - "@request_stack"
+            - "@form.factory"
+            - "@zikula_extensions_module.api.variable"
+            - "@rk_info_module.entity_factory"
+            - "@rk_info_module.model_helper"
+            - "@rk_info_module.selection_helper"
+            - "@rk_info_module.feature_activation_helper"
+    
+    rk_info_module.feature_activation_helper:
+        class: RK\InfoModule\Helper\FeatureActivationHelper
+    
+    rk_info_module.hook_helper:
+        class: RK\InfoModule\Helper\HookHelper
+        arguments:
+            - "@hook_dispatcher"
+    
+    rk_info_module.listentries_helper:
+        class: RK\InfoModule\Helper\ListEntriesHelper
+        arguments:
+            - "@translator.default"
+    
+    rk_info_module.model_helper:
+        class: RK\InfoModule\Helper\ModelHelper
+        arguments:
+            - "@rk_info_module.entity_factory"
+    
+    rk_info_module.selection_helper:
+        class: RK\InfoModule\Helper\SelectionHelper
+        arguments:
+            - "@translator.default"
+            - "@rk_info_module.entity_factory"
+    
+    rk_info_module.translatable_helper:
+        class: RK\InfoModule\Helper\TranslatableHelper
+        arguments:
+            - "@translator.default"
+            - "@request_stack"
+            - "@zikula_extensions_module.api.variable"
+            - "@rk_info_module.entity_factory"
+    
+    rk_info_module.view_helper:
+        class: RK\InfoModule\Helper\ViewHelper
+        arguments:
+            - "@templating"
+            - "@request_stack"
+            - "@zikula_permissions_module.api.permission"
+            - "@zikula_extensions_module.api.variable"
+            - "@rk_info_module.controller_helper"
+    
+    rk_info_module.workflow_helper:
+        class: RK\InfoModule\Helper\WorkflowHelper
+        arguments:
+            - "@translator.default"
+            - "@rk_info_module.listentries_helper"

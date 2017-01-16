@@ -1,0 +1,7 @@
+{# purpose of this template: informations xml inclusion template #}
+<information id="{{ information.id }}" createdon="{{ information.createdDate|localizeddate('medium', 'short') }}" updatedon="{{ information.updatedDate|localizeddate('medium', 'short') }}">
+    <id>{{ information.id }}</id>
+    <title><![CDATA[{{ information.title }}]]></title>
+    <theDescription><![CDATA[{{ information.theDescription|safeHtml }}]]></theDescription>
+    <workflowState>{{ information.workflowState|rkinfomodule_objectState(false)|lower }}</workflowState>
+</information>

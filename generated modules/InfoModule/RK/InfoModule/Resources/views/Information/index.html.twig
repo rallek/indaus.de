@@ -1,0 +1,7 @@
+{# purpose of this template: informations index view #}
+{% extends routeArea == 'admin' ? 'RKInfoModule::adminBase.html.twig' : 'RKInfoModule::base.html.twig' %}
+{% block title __('informations') %}
+{% block admin_page_icon 'home' %}
+{% block content %}
+    <p>{{ __('Welcome to the information section of the Info application.') }}</p>
+{% endblock %}

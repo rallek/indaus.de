@@ -1,0 +1,71 @@
+services:
+    # Form types
+    
+    rk_info_module.form.type.informationquicknav:
+        class: RK\InfoModule\Form\Type\QuickNavigation\InformationQuickNavType
+        arguments:
+            - "@translator.default"
+            - "@rk_info_module.listentries_helper"
+            - "@rk_info_module.feature_activation_helper"
+        tags:
+            - { name: form.type }
+    
+    rk_info_module.form.handler.information:
+        class: RK\InfoModule\Form\Handler\Information\EditHandler
+        arguments:
+            - "@kernel"
+            - "@translator.default"
+            - "@form.factory"
+            - "@request_stack"
+            - "@router"
+            - "@logger"
+            - "@zikula_permissions_module.api.permission"
+            - "@zikula_extensions_module.api.variable"
+            - "@zikula_users_module.current_user"
+            - "@rk_info_module.entity_factory"
+            - "@rk_info_module.controller_helper"
+            - "@rk_info_module.model_helper"
+            - "@rk_info_module.selection_helper"
+            - "@rk_info_module.workflow_helper"
+            - "@rk_info_module.hook_helper"
+            - "@rk_info_module.translatable_helper"
+            - "@rk_info_module.feature_activation_helper"
+        calls:
+            - [setLockingApi, ["@?zikula_pagelock_module.api.locking"]]
+        tags:
+            - { name: form.type }
+    
+    rk_info_module.form.type.information:
+        class: RK\InfoModule\Form\Type\InformationType
+        arguments:
+            - "@translator.default"
+            - "@rk_info_module.entity_factory"
+            - "@zikula_extensions_module.api.variable"
+            - "@rk_info_module.translatable_helper"
+            - "@rk_info_module.listentries_helper"
+            - "@rk_info_module.feature_activation_helper"
+        tags:
+            - { name: form.type }
+    
+    rk_info_module.form.type.block.itemlist:
+        class: RK\InfoModule\Block\Form\Type\ItemListBlockType
+        arguments:
+            - "@translator.default"
+        tags:
+            - { name: form.type }
+    
+    rk_info_module.form.type.informationfinder:
+        class: RK\InfoModule\Form\Type\Finder\InformationFinderType
+        arguments:
+            - "@translator.default"
+            - "@rk_info_module.feature_activation_helper"
+        tags:
+            - { name: form.type }
+    
+    rk_info_module.form.type.appsettings:
+        class: RK\InfoModule\Form\AppSettingsType
+        arguments:
+            - "@translator.default"
+            - "@zikula_extensions_module.api.variable"
+        tags:
+            - { name: form.type }

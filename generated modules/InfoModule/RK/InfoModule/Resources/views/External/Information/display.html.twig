@@ -1,0 +1,39 @@
+{# Purpose of this template: Display one certain information within an external context #}
+<div id="information{$information.id}" class="rkinfomodule-external-information">
+{% if displayMode == 'link' %}
+    <p class="rkinfomodule-external-link">
+    <a href="{{ path('rkinfomodule_information_display', { 'id': information.id }) }}" title="{{ information.getTitleFromDisplayPattern()|e('html_attr') }}">
+    {{ information.getTitleFromDisplayPattern()|notifyFilters('info.filter_hooks.informations.filter') }}
+    </a>
+    </p>
+{% endif %}
+{% if hasPermission('RKInfoModule::', '::', 'ACCESS_EDIT') %}
+    {# for normal users without edit permission show only the actual file per default #}
+    {% if displayMode == 'embed' %}
+        <p class="rkinfomodule-external-title">
+            <strong>{{ information.getTitleFromDisplayPattern()|notifyFilters('info.filter_hooks.informations.filter') }}</strong>
+        </p>
+    {% endif %}
+{% endif %}
+
+{% if displayMode == 'link' %}
+{% elseif displayMode == 'embed' %}
+    <div class="rkinfomodule-external-snippet">
+        &nbsp;
+    </div>
+
+    {# you can distinguish the context like this: #}
+    {# % if source == 'contentType' %}
+        ...
+    {% elseif source == 'scribite' %}
+        ...
+    {% endif % #}
+
+    {# you can enable more details about the item: #}
+    {#
+        <p class="rkinfomodule-external-description">
+            {% if information.theDescription is not empty %}{{ information.theDescription }}<br />{% endif %}
+        </p>
+    #}
+{% endif %}
+</div>

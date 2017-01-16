@@ -1,0 +1,6 @@
+{# Purpose of this template: Display search options #}
+<input type="hidden" id="rKInfoModuleActive" name="active[RKInfoModule]" value="1" />
+<div>
+    <input type="checkbox" id="active_rKInfoModuleInformations" name="rKInfoModuleSearchTypes[]" value="information"{% if active_information %} checked="checked"{% endif %} />
+    <label for="active_rKInfoModuleInformations">{{ __('Informations', 'rkinfomodule') }}</label>
+</div>

@@ -1,0 +1,9 @@
+{# purpose of this template: informations view xml view #}
+<?xml version="1.0" encoding="{{ pageGetVar('meta.charset') }}" ?>
+<informations>
+{% for information in items %}
+    {{ include('@RKInfoModule/Information/include.xml.twig') }}
+{% else %}
+    <noInformation />
+{% endfor %}
+</informations>

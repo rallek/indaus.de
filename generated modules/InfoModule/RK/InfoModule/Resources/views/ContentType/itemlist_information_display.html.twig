@@ -1,0 +1,6 @@
+{# Purpose of this template: Display informations within an external context #}
+{% for information in items %}
+    <h3>{{ information.getTitleFromDisplayPattern() }}</h3>
+    <p><a href="{{ path('rkinfomodule_information_display', { 'id': information.id }) }}">{{ __('Read more') }}</a>
+    </p>
+{% endfor %}

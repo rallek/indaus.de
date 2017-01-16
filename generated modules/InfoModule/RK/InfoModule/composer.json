@@ -1,0 +1,43 @@
+{
+    "name": "rk/info-module",
+    "version": "0.1.0",
+    "description": "with this module Indaus will create some translatable pages.",
+    "type": "zikula-module",
+    "license": "LGPL-3.0+",
+    "authors": [
+        {
+            "name": "Ralf Koester",
+            "email": "ralf@familie-koester.de",
+            "homepage": "http://k62.de",
+            "role": "owner"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "RK\\InfoModule\\": "" }
+    },
+    "require": {
+        "php": ">=5.4.1"
+    },
+    "suggest": {
+    },
+    "extra": {
+        "zikula": {
+            "core-compatibility": ">=1.4.5",
+            "class": "RK\\InfoModule\\RKInfoModule",
+            "displayname": "Info",
+            "url": "info",
+            "capabilities": {
+                "user": {"route": "rkinfomodule_information_index"},
+                "admin": {"route": "rkinfomodule_information_adminindex"},
+                "searchable": {"class": "RK\\InfoModule\\Helper\\SearchHelper"},
+                "hook_subscriber": {"class": "RK\\InfoModule\\Container\\HookContainer"}
+            },
+            "securityschema": {
+                "RKInfoModule::": "::",
+                "RKInfoModule:ItemListBlock:": "Block title::",
+                "RKInfoModule:Information:": "Information ID::",
+                "RKInfoModule::Ajax": "::"
+            }
+        }
+    }
+}

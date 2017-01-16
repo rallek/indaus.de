@@ -1,0 +1,14 @@
+services:
+    # Form field types
+    
+    rk_info_module.form.type.field.datetime:
+        class: RK\InfoModule\Form\Type\Field\DateTimeType
+        tags:
+            - { name: form.type }
+    
+    rk_info_module.form.type.field.user:
+        class: RK\InfoModule\Form\Type\Field\UserType
+        arguments:
+            - "@zikula_users_module.user_repository"
+        tags:
+            - { name: form.type }
