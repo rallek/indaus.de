@@ -151,7 +151,7 @@ abstract class AbstractTranslatableHelper
         // prepare form data to edit multiple translations at once
     
         // get translations
-        $repository = $this->entityFactory->getRepository($objectType);
+        $repository = $this->entityFactory->getObjectManager()->getRepository('Gedmo\Translatable\Entity\Translation');
         $entityTranslations = $repository->findTranslations($entity);
     
         $supportedLanguages = $this->getSupportedLanguages($objectType);
@@ -207,11 +207,9 @@ abstract class AbstractTranslatableHelper
                     continue;
                 }
                 $translations[$language] = [];
-                $translationKey = strtolower($objectType) . $language;
-                $translationData = isset($form[$translationKey]) && $form[$translationKey]->getData();
                 foreach ($fields as $field) {
-                    $translations[$language][$field['name']] = isset($translationData[$field['name'] . $language]) ? $translationData[$field['name'] . $language] : '';
-                    unset($formData[$field['name'] . $language]);
+                    $translationKey = $field['name'] . $language;
+                    $translations[$language][$field['name']] = isset($form[$translationKey]) ? $form[$translationKey]->getData() : '';
                 }
             }
         }

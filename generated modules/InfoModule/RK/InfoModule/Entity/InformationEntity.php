@@ -25,8 +25,8 @@ use RK\InfoModule\Traits\StandardFieldsTrait;
  * Entity class that defines the entity structure and behaviours.
  *
  * This is the concrete entity class for information entities.
-  * @Gedmo\TranslationEntity(class="\RK\InfoModule\Entity\InformationTranslationEntity")
- * @ORM\Entity(repositoryClass="\RK\InfoModule\Entity\Repository\InformationRepository")
+  * @Gedmo\TranslationEntity(class="RK\InfoModule\Entity\InformationTranslationEntity")
+ * @ORM\Entity(repositoryClass="RK\InfoModule\Entity\Repository\InformationRepository")
  * @ORM\Table(name="rk_info_information",
  *     indexes={
  *         @ORM\Index(name="workflowstateindex", columns={"workflowState"})

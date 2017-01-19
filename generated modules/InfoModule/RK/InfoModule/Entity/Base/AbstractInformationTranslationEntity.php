@@ -12,13 +12,13 @@
 
 namespace RK\InfoModule\Entity\Base;
 
-use Gedmo\Translatable\Entity\Translation;
+use Gedmo\Translatable\Entity\MappedSuperclass\AbstractTranslation;
 
 /**
  * Entity extension domain class storing information translations.
  *
  * This is the base translation class for information entities.
  */
-abstract class AbstractInformationTranslationEntity extends Translation
+abstract class AbstractInformationTranslationEntity extends AbstractTranslation
 {
 }

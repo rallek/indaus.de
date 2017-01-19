@@ -74,6 +74,11 @@ abstract class AbstractEditHandler extends EditHandler
             'hasModeratePermission' => $this->permissionApi->hasPermission($this->permissionComponent, $this->createCompositeIdentifier() . '::', ACCESS_MODERATE),
         ];
     
+        $options['translations'] = [];
+        foreach ($this->templateParameters['supportedLanguages'] as $language) {
+            $options['translations'][$language] = isset($this->templateParameters[$this->objectTypeLower . $language]) ? $this->templateParameters[$this->objectTypeLower . $language] : [];
+        }
+    
         return $this->formFactory->create('RK\InfoModule\Form\Type\InformationType', $this->entityRef, $options);
     }
 

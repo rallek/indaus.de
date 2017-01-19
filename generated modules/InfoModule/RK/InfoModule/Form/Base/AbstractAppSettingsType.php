@@ -105,7 +105,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('10'),
                 'attr' => [
                     'maxlength' => 255,
-                    'title' => $this->__('Enter the information entries per page. Only digits are allowed.')
+                    'title' => $this->__('Enter the information entries per page.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0
             ])
             ->add('linkOwnInformationsOnAccountPage', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', [

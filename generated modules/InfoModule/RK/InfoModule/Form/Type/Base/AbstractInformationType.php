@@ -140,9 +140,12 @@ abstract class AbstractInformationType extends AbstractType
                     if ($language == $currentLanguage) {
                         continue;
                     }
+                    $translationData = isset($options['translations'][$language]) ? $options['translations'][$language] : [];
+                    
                     
                     $builder->add('title' . $language, 'Symfony\Component\Form\Extension\Core\Type\TextType', [
                         'label' => $this->__('Title') . ':',
+                        'data' => isset($translationData['title' . $language]) ? $translationData['title' . $language] : null,
                         'empty_data' => '',
                         'mapped' => false,
                         'attr' => [
@@ -154,6 +157,7 @@ abstract class AbstractInformationType extends AbstractType
                     
                     $builder->add('theDescription' . $language, 'Symfony\Component\Form\Extension\Core\Type\TextareaType', [
                         'label' => $this->__('The description') . ':',
+                        'data' => isset($translationData['theDescription' . $language]) ? $translationData['theDescription' . $language] : null,
                         'empty_data' => '',
                         'mapped' => false,
                         'attr' => [
@@ -307,12 +311,14 @@ abstract class AbstractInformationType extends AbstractType
                 'mode' => 'create',
                 'actions' => [],
                 'hasModeratePermission' => false,
+                'translations' => [],
             ])
             ->setRequired(['mode', 'actions'])
             ->setAllowedTypes([
                 'mode' => 'string',
                 'actions' => 'array',
                 'hasModeratePermission' => 'bool',
+                'translations' => 'array',
             ])
             ->setAllowedValues([
                 'mode' => ['create', 'edit']

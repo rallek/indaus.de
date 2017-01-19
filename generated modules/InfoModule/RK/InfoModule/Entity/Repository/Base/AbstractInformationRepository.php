@@ -13,7 +13,7 @@
 namespace RK\InfoModule\Entity\Repository\Base;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Gedmo\Translatable\Entity\Repository\TranslationRepository;
+use Doctrine\ORM\EntityRepository;
 
 use Doctrine\ORM\Query;
 use Doctrine\ORM\QueryBuilder;
@@ -35,7 +35,7 @@ use RK\InfoModule\Helper\FeatureActivationHelper;
  *
  * This is the base repository class for information entities.
  */
-abstract class AbstractInformationRepository extends TranslationRepository
+abstract class AbstractInformationRepository extends EntityRepository
 {
     
     /**
