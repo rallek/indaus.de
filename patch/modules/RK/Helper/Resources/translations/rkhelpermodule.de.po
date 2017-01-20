@@ -1,0 +1,853 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.8.11\n"
+"Last-Translator: Ralf Köster <ralf@familie-koester.de>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: de\n"
+
+#, fuzzy
+msgid ""
+"\"%bar\" will match \"FOObar\", \"Blubbar\" and so on, but not \"BarFoo\"."
+msgstr ""
+"\"%bar\" wird \"FOObar\", \"Blubbar\" usw. entsprechen, aber nicht \"BarFoo"
+"\"."
+
+#, fuzzy
+msgid "A filter consists of several statements."
+msgstr "Ein Filter besteht aus mehreren Anweisungen."
+
+msgid "Actions"
+msgstr "Aktionen"
+
+#, fuzzy
+msgid "All additional joined tables can be referenced by \"tblFoo\"."
+msgstr ""
+"Alle zusätzlichen verknüpfte Tabellen können durch \"TblFoo\" verwiesen "
+"werden."
+
+#, fuzzy
+msgid "All items with a date in July 2016."
+msgstr "Alle Elemente mit einem Datum im Juli 2016."
+
+#, fuzzy
+msgid "All items with a date in year 2016."
+msgstr "Alle Elemente mit einem Datum im Jahr 2016."
+
+#, fuzzy
+msgid "All items with date in the last year."
+msgstr "Alle Elemente mit Datum im letzten Jahr."
+
+#, fuzzy
+msgid "All items with date of today."
+msgstr "Alle Elemente mit Datum von heute."
+
+#, fuzzy
+msgid "All items with date up from 24 hours ago."
+msgstr "Alle Artikel der letzten 24 Stunden."
+
+#, fuzzy
+msgid "Allowed file extensions"
+msgstr "Erlaubte Dateiendungen"
+
+msgid "Allowed file size"
+msgstr "Erlaubte Dateigröße:"
+
+#, fuzzy
+msgid "Also you can use \"%\" as placeholder."
+msgstr "Sie können auch \"%\" als Platzhalter verwenden."
+
+msgid "Approved"
+msgstr "Genehmigt"
+
+msgid "Back to paginated view"
+msgstr "Zurück zur Seitenansicht"
+
+msgid "Boostrap setting"
+msgstr "Boostrap Einstellung"
+
+msgid "Carousel"
+msgstr "Karussell"
+
+msgid "Carousel group"
+msgstr "Karussell-Gruppe"
+
+msgid "Carousel item"
+msgstr "Karussell Element"
+
+msgid "Carousel item list"
+msgstr "Karussell Element Liste"
+
+msgid "Carousel items"
+msgstr "Karussell-Elemente"
+
+msgid "Carousel list"
+msgstr "Karussell-Liste"
+
+msgid "Carousel locale"
+msgstr "Sprache"
+
+msgid "Carousel name"
+msgstr "Karussell Name"
+
+msgid "Choose action"
+msgstr "Aktion wählen"
+
+msgid "Close"
+msgstr "Schließen"
+
+msgid "Combining statements"
+msgstr "Kombination von Aussagen"
+
+msgid "Confirmation prompt"
+msgstr "Bestätigungsabfrage"
+
+msgid "Content"
+msgstr "Inhalt"
+
+msgid "Content has been approved and is available online."
+msgstr "Inhalt wurde geprüft und ist online verfügbar."
+
+msgid "Controls"
+msgstr "Steuerung"
+
+msgid "Create carousel"
+msgstr "Karussell erstellen"
+
+msgid "Create carousel item"
+msgstr "Karussell-Element erstellen"
+
+msgid "Create image"
+msgstr "Bild erstellen"
+
+msgid "Create info"
+msgstr "Infoseite anlegen"
+
+msgid "Create linker"
+msgstr "Linker erstellen"
+
+msgid "Created by %user"
+msgstr "Erstellt von %user"
+
+msgid "Created by %user on %date"
+msgstr "Erstellt von %user am %date"
+
+msgid "Created on %date"
+msgstr "Erstellt am %date"
+
+msgid "Creation"
+msgstr "Erstellung"
+
+msgid "Creation and update"
+msgstr "Erstellung und Aktualisierung"
+
+msgid "Current file"
+msgstr "Aktuelle Datei"
+
+msgid "Date operators"
+msgstr "Datumsauswahl"
+
+msgid "Dates"
+msgstr "Datum"
+
+msgid "Delete"
+msgstr "Löschen"
+
+msgid "Delete carousel"
+msgstr "Karussell löschen"
+
+msgid "Delete carousel item"
+msgstr "Karussell-Element löschen"
+
+msgid "Delete content permanently."
+msgstr "Inhalt dauerhaft löschen."
+
+msgid "Delete image"
+msgstr "Bild löschen"
+
+msgid "Delete info"
+msgstr "Infoseite löschen"
+
+msgid "Delete linker"
+msgstr "Linker löschen"
+
+msgid "Deleted"
+msgstr "Gelöscht"
+
+msgid "Do you really want to delete this carousel item: \"%name%\" ?"
+msgstr "Möchten Sie wirklich dieses Karousell Element löschen: \"%name%\"?"
+
+msgid "Do you really want to delete this carousel: \"%name%\" ?"
+msgstr "Möchten Sie wirklich dieses Karousell löschen: \"%name%\"?"
+
+msgid "Do you really want to delete this image: \"%name%\" ?"
+msgstr "Möchten Sie wirklich dieses Bild löschen: \"%name%\"?"
+
+msgid "Do you really want to delete this info: \"%name%\" ?"
+msgstr "Soll die Infoseite wirklich gelöscht werden: \"%name%\" ?"
+
+msgid "Do you really want to delete this linker: \"%name%\" ?"
+msgstr "Möchten Sie wirklich diesen Linker löschen: \"% Name%\"?"
+
+msgid "Download"
+msgstr "Download"
+
+msgid ""
+"Each statement is a set of field name, operator and value connected by a "
+"colon."
+msgstr ""
+"Jede Aussage ist ein Satz von Feldnamen, Operator und Wert durch einen "
+"Doppelpunkt verbunden."
+
+msgid "Edit carousel"
+msgstr "Karussell bearbeiten"
+
+msgid "Edit carousel item"
+msgstr "Karussell Element bearbeiten"
+
+msgid "Edit image"
+msgstr "Bild bearbeiten"
+
+msgid "Edit info"
+msgstr "Infoseiten bearbeiten"
+
+msgid "Edit linker"
+msgstr "Linker bearbeiten"
+
+#, fuzzy
+msgid ""
+"Either the first name is Peter and the house number of any address is below "
+"100 or the first name is Chris and the house number of any address is below "
+"150."
+msgstr ""
+"Entweder der erste Name ist Peter und die Hausnummer an jede beliebige "
+"Adresse ist unter 100 oder der erste Name ist Chris und die Hausnummer an "
+"jede beliebige Adresse ist unter 150."
+
+#, fuzzy
+msgid "Enter a part of the user name to search"
+msgstr "Zum Suchen geben Sie einen Teil des Benutzernamens ein"
+
+msgid "Example"
+msgstr "Beispiel"
+
+msgid "Filter statements"
+msgstr "Filter Statements"
+
+msgid "Filter syntax explained"
+msgstr "Filtersyntax erklärt"
+
+#, fuzzy
+msgid ""
+"For time periods: Begin of the given period. \"Date:ge:today\" matches all "
+"items with date of today or later."
+msgstr ""
+"Für Zeiträume: Anfang der gegeben Periode. \"Date:ge:today\" betrift alle "
+"Items mit dem Datum von heute oder später."
+
+#, fuzzy
+msgid ""
+"For time periods: Begin of the given period. \"Date:lt:today\" matches all "
+"items with date of yesterday or before."
+msgstr ""
+"Für Zeiträume: Anfang der gegeben Periode. \"Date:lt:today\" betrift alle "
+"Items mit dem Datum von gestern oder früher."
+
+#, fuzzy
+msgid ""
+"For time periods: End of the given period. \"Date:gt:today\" matches all "
+"items with date of tomorrow or later."
+msgstr ""
+"Für Zeiträume: Ende der gegeben Periode. \"Date:gt:today\" betrift alle "
+"Items mit dem Datum von morgen oder später."
+
+#, fuzzy
+msgid ""
+"For time periods: End of the given period. \"Date:le:today\" matches all "
+"items with date of today or before."
+msgstr ""
+"Für Zeiträume: Ende der gegeben Periode. \"Date:le:today\" betrift alle "
+"Items mit dem Datum von heute oder früher."
+
+#, fuzzy
+msgid "Furthermore you can use brackets to group statements."
+msgstr "Desweiteren können Klammern genutzt werden um Aussagen zu gruppieren."
+
+#, fuzzy
+msgid "General syntax"
+msgstr "Allgemeine Syntax"
+
+#, fuzzy
+msgid "Here you can configure parameters for list views."
+msgstr "Hier können Sie Parameter für die Listenansichten konfigurieren."
+
+msgid "Image"
+msgstr "Bild"
+
+msgid "Image list"
+msgstr "Bild Liste"
+
+msgid "Image settings for carousel items item image"
+msgstr "Bildeinstellungen für Karussellelemente Elementbild"
+
+msgid "Image settings for images my image"
+msgstr "Bildeinstellungen für meine Bilder"
+
+msgid "Image settings for linkers linker image"
+msgstr "Bildeinstellungen für Linker Bild"
+
+msgid "Image title"
+msgstr "Bildtitel"
+
+msgid "Images"
+msgstr "Bilder"
+
+msgid "Info"
+msgstr "Infoseite"
+
+msgid "Info description"
+msgstr "Beschreibung Infoseite"
+
+msgid "Info list"
+msgstr "Liste Infoseiten"
+
+msgid "Info title"
+msgstr "Titel Infoseite"
+
+msgid "Infos"
+msgstr "Infoseiten"
+
+#, fuzzy
+msgid "Initial"
+msgstr "Initial"
+
+msgid "Intem end date"
+msgstr "Endedatum"
+
+#, fuzzy
+msgid ""
+"It is possible to filter the list of retrieved items by specifying arbitrary "
+"filter expressions. This page shows how to create these expressions."
+msgstr ""
+"Es ist möglich, die Liste der gefundenen Elemente zu filtern durch Angabe "
+"frei wählbarer Filterausdrücke. Diese Seite zeigt, wie Sie diese Ausdrücke "
+"erstellen."
+
+msgid "Item image"
+msgstr "Elementbild"
+
+msgid "Item locale"
+msgstr "Sprache"
+
+#, fuzzy
+msgid "Item name"
+msgstr "Artikelname"
+
+msgid "Item start date"
+msgstr "Anfangsadatum"
+
+#, fuzzy
+msgid "Last update"
+msgstr "Letzte Aktualisierung"
+
+#, fuzzy
+msgid "Link"
+msgstr "Link"
+
+msgid "Link external"
+msgstr "Externer Link"
+
+#, fuzzy
+msgid "Linker"
+msgstr "Linker"
+
+msgid "Linker group"
+msgstr "Linker-Gruppe"
+
+msgid "Linker headline"
+msgstr "Linker Schlagzeile"
+
+msgid "Linker image"
+msgstr "Linker Bild"
+
+msgid "Linker list"
+msgstr "Linker Liste"
+
+msgid "Linker locale"
+msgstr "Sprache"
+
+msgid "Linker text"
+msgstr "Linker Text"
+
+msgid "Linkers"
+msgstr "Linker"
+
+#, fuzzy
+msgid "List views"
+msgstr "Listenansichten"
+
+#, fuzzy
+msgid "Manage user"
+msgstr "Benutzer verwalten"
+
+#, fuzzy
+msgid "Moderation"
+msgstr "Ersteller und Erstellungsdatum ändern"
+
+msgid "My carousel items"
+msgstr "Meine Karussell-Elemente"
+
+msgid "My carousells"
+msgstr "Meine Karussells"
+
+#, fuzzy
+msgid "My description"
+msgstr "Meine Beschreibung"
+
+msgid "My image"
+msgstr "Mein Bild"
+
+msgid "My images"
+msgstr "Meine Bilder"
+
+msgid "My infos"
+msgstr "Meine Infoseiten"
+
+msgid "My linkers"
+msgstr "Meine Linker"
+
+#, fuzzy
+msgid "No"
+msgstr "Nein"
+
+msgid "No carousel items found."
+msgstr "Keine Karussell Elemente gefunden."
+
+msgid "No carousells found."
+msgstr "Keine Karussells gefunden."
+
+#, fuzzy
+msgid "No entries found."
+msgstr "Keine Einträge gefunden."
+
+#, fuzzy
+msgid "No images found."
+msgstr "Keine Bilder gefunden."
+
+msgid "No infos found."
+msgstr "Keine Infoseiten gefunden."
+
+msgid "No linkers found."
+msgstr "Keine Linker gefunden."
+
+#, fuzzy
+msgid "No results found!"
+msgstr "Keine Ergebnisse gefunden!"
+
+#, fuzzy
+msgid "None workflow (no approval)"
+msgstr "Kein Workflow (keine Freigabe)"
+
+msgid "Not set."
+msgstr "Nicht gesetzt."
+
+#, fuzzy
+msgid "Open file"
+msgstr "Datei öffnen"
+
+#, fuzzy
+msgid "Open quick view window"
+msgstr "Fenster für Schnellansicht öffnen"
+
+#, fuzzy
+msgid "Operators"
+msgstr "Operatoren"
+
+#, fuzzy
+msgid ""
+"Prepend one of the keywords \"year\", \"month\", \"week\", \"day\", \"hour"
+"\", \"min\" followed by a colon to search for a time period."
+msgstr ""
+"Prepend one of the keywords \"year\", \"month\", \"week\", \"day\", \"hour"
+"\", \"min\" followed by a colon to search for a time period."
+
+#, fuzzy
+msgid "Pseudo-state for content which has been deleted from the database."
+msgstr "Pseudo-Status für Inhalt, welcher aus der Datenbank gelöscht wurde."
+
+#, fuzzy
+msgid "Pseudo-state for content which is just created and not persisted yet."
+msgstr ""
+"Pseudo-Status für Inhalt, welcher gerade erstellt aber noch nicht "
+"persistiert wurde."
+
+#, fuzzy
+msgid "Quick navigation"
+msgstr "Schnellnavigation"
+
+#, fuzzy
+msgid "Read more"
+msgstr "Weiterlesen"
+
+#, fuzzy
+msgid "Remarks"
+msgstr "Bemerkungen"
+
+#, fuzzy
+msgid "Reset to empty value"
+msgstr "Eingabe Löschen"
+
+#, fuzzy
+msgid "Return control"
+msgstr "Return Control"
+
+msgid "Search and select carousel item"
+msgstr "Karussell Element suchen und auswählen"
+
+msgid "Search and select image"
+msgstr "Bild suchen und auswählen"
+
+msgid "Search and select info"
+msgstr "Infoseite suchen und auswählen"
+
+msgid "Search and select linker"
+msgstr "Linker suchen und auswählen"
+
+#, fuzzy
+msgid "Search user"
+msgstr "Benutzer suchen"
+
+#, fuzzy
+msgid "Settings"
+msgstr "Einstellungen"
+
+#, fuzzy
+msgid ""
+"Several statements can be connected by a comma , (AND) or an asterisk * (OR)."
+msgstr ""
+"Mehere Ausdrücke können durch ein Komma , (AND) oder Stern * (OR) verbunden "
+"werden."
+
+#, fuzzy
+msgid "Show all entries"
+msgstr "Zeige alle Einträge"
+
+#, fuzzy
+msgid "Show syntax examples"
+msgstr "Syntaxbeispiele zeigen"
+
+msgid "Single item identifier"
+msgstr "Einzelner Element Identifier"
+
+msgid "Sliding time"
+msgstr "Sliding Zeit"
+
+#, fuzzy
+msgid ""
+"So in our example we can reference Persons with \"tbl\" and addresses with "
+"\"tblAddresses\"."
+msgstr ""
+"So in our example we can reference Persons with \"tbl\" and addresses with "
+"\"tblAddresses\"."
+
+#, fuzzy
+msgid "Sort by %s"
+msgstr "Sortieren nach %s"
+
+#, fuzzy
+msgid "Sorting"
+msgstr "Sortierung"
+
+#, fuzzy
+msgid "Special field types"
+msgstr "Spezielle Feldtypen"
+
+#, fuzzy
+msgid "Submit"
+msgstr "Bestätigen"
+
+#, fuzzy
+msgid "Submit content."
+msgstr "Inhalt bestätigen."
+
+#, fuzzy
+msgid "Subtitle"
+msgstr "Untertitel"
+
+#, fuzzy
+msgid "Switch to users administration"
+msgstr "Wechseln Sie in die Benutzerverwaltung."
+
+#, fuzzy
+msgid "Table aliases"
+msgstr "Tabellen Aliase"
+
+#, fuzzy
+msgid "The first name equals either Peter or Chris"
+msgstr "Der Vorname entspricht entweder Peter oder Chris"
+
+#, fuzzy
+msgid "The first name is Peter"
+msgstr "Der erste Name ist Peter"
+
+#, fuzzy
+msgid ""
+"The first name is Peter and the house number of any address is below 100."
+msgstr ""
+"The first name is Peter and the house number of any address is below 100."
+
+#, fuzzy
+msgid ""
+"The following filters assume that you have a list of persons whereby each "
+"person can have many addresses."
+msgstr ""
+"The following filters assume that you have a list of persons whereby each "
+"person can have many addresses."
+
+#, fuzzy
+msgid "The house number of any address is lower than 100"
+msgstr "Die Hausnummer von jeder beliebigen Adresse ist niedriger als 100"
+
+msgid ""
+"The items are normally images. If you do not upload an image please be so "
+"kind and make a title and a subtitle"
+msgstr ""
+"Die Elemente sind in der Regel Bilder. Wenn kein Bild hochladen wird, müssen "
+"Titel und Untertitel angelegt werden."
+
+#, fuzzy
+msgid "The link"
+msgstr "Der Link"
+
+#, fuzzy
+msgid ""
+"The main table, that is the entity being the primary subject of the query, "
+"is always known directly. That means, you can prepend \"tbl.\", but you do "
+"not need to."
+msgstr ""
+"The main table, that is the entity being the primary subject of the query, "
+"is always known directly. That means, you can prepend \"tbl.\", but you do "
+"not need to."
+
+#, fuzzy
+msgid "The operator defines the condition type (equal, lower than, etc.)."
+msgstr "The operator defines the condition type (equal, lower than, etc.)."
+
+#, fuzzy
+msgid ""
+"The term \"bar\" will match \"foobarthis\", but not \"foobar\" nor \"barfoo"
+"\"."
+msgstr ""
+"The term \"bar\" will match \"foobarthis\", but not \"foobar\" nor \"barfoo"
+"\"."
+
+#, fuzzy
+msgid ""
+"The term \"foo\" will match \"fOo\", \"AnotherFoo\" and so on, but not "
+"\"FoObar\" or \"FooBlub\"."
+msgstr ""
+"Der Begriff \"Foo\" passt für \"fOo\", \"AnotherFoo\" und so weiter, aber "
+"nicht für \"FoObar\" oder \"FooBlub\"."
+
+#, fuzzy
+msgid ""
+"The term \"foo\" will match \"fOo\", \"FOObar\", \"FooBlub\" and so on, but "
+"not \"AnotherFoo\"."
+msgstr ""
+"Der Begriff \"Foo\" passt für \"fOo\", \"FOObar\", \"FooBlub\" und so "
+"weiter, aber nicht für \"AnotherFoo\"."
+
+#, fuzzy
+msgid "The value is scanned case insensitive."
+msgstr "Der Wert wird unabhängig von Groß- bzw. Kleinschreibung abgefragt."
+
+#, fuzzy
+msgid ""
+"Thereby \"Foo\" does not mean the name of the joined entity, but the source "
+"or target alias of the corresponding relationship."
+msgstr ""
+"Dabei bedeutet \"Foo\" nicht der Name der verknüpften Entität, aber die "
+"Quelle oder das Ziel Alias der entsprechenden Beziehung."
+
+msgid ""
+"This entity is for webmaster usage only. Here we can store some images for "
+"graphical usage."
+msgstr ""
+"Hier können Bilder für die Verwendung auf der Homepage gespeichert werden."
+
+#, fuzzy
+msgid "This function requires JavaScript activated!"
+msgstr "Diese Funktion verlangt aktiviertes Javascript!"
+
+#, fuzzy
+msgid ""
+"This has the advantage that it is possible to join a certain table multiple "
+"times. For example instead of having many addresses for a person one could "
+"also create two relationships for business and home addresses this way."
+msgstr ""
+"Dies hat den Vorteil, dass es möglich ist, eine bestimmte Tabelle mehrfach "
+"zu verknüpfen. Zum Beispiel könnte anstatt viele Adressen für eine Person "
+"auch zwei Beziehungen für Geschäfts- und Privatadressen auf diese Weise "
+"entstehen."
+
+msgid "This is for creating simple translatable pages"
+msgstr "Dies ist für die Erstellung von einfachen übersetzbaren Seiten"
+
+#, fuzzy
+msgid ""
+"This is like a non-existing workflow. Everything is online immediately after "
+"creation."
+msgstr ""
+"Dies ist wie ein nicht existierender Workflow. Alles ist nach dem Erstellen "
+"direkt online."
+
+#, fuzzy
+msgid "Title"
+msgstr "Titel"
+
+#, fuzzy
+msgid "Title color"
+msgstr "Titelfarbe"
+
+#, fuzzy
+msgid "Update"
+msgstr "Update"
+
+#, fuzzy
+msgid "Update content."
+msgstr "Aktualisiere Inhalt."
+
+#, fuzzy
+msgid "Updated by %user"
+msgstr "Aktualisiert von %user"
+
+#, fuzzy
+msgid "Updated by %user on %date"
+msgstr "Aktualisiert von %user am %date"
+
+#, fuzzy
+msgid "Updated on %date"
+msgstr "Aktualisiert am %date"
+
+#, fuzzy
+msgid "View detail page"
+msgstr "Zeige Detailseite"
+
+msgid "Welcome to the carousel item section of the Helper application."
+msgstr "Willkommen im Karussell Elemente Abschnitt des Helpermoduls."
+
+msgid "Welcome to the carousel section of the Helper application."
+msgstr "Willkommen im Karussell Abschnitt des Helpermoduls."
+
+msgid "Welcome to the image section of the Helper application."
+msgstr "Willkommen im Bilder Abschnitt des Helpermoduls."
+
+msgid "Welcome to the info section of the Helper application."
+msgstr "Willkommen im Abschnitt der Infoseiten des Helpermoduls."
+
+msgid "Welcome to the linker section of the Helper application."
+msgstr "Willkommen im Linker Abschnitt des Helpermoduls."
+
+#, fuzzy
+msgid ""
+"When filtering for dates you can use convenient extensions and even time "
+"periods."
+msgstr ""
+"Beim Filtern nach Datum können Sie bequeme Erweiterungen und sogar Zeiträume "
+"benutzen."
+
+msgid "With selected carousel items"
+msgstr "Mit ausgewählten Karussell Elementen"
+
+msgid "With selected carousells"
+msgstr "Mit ausgewählten Karussells"
+
+msgid "With selected images"
+msgstr "Mit ausgewählten Bildern"
+
+msgid "With selected infos"
+msgstr "Mit ausgewählten Infoseiten"
+
+msgid "With selected linkers"
+msgstr "Mit ausgewählten Linkern"
+
+#, fuzzy
+msgid "Yes"
+msgstr "Ja"
+
+#, fuzzy
+msgid ""
+"You can use relative time information according to the GNU Date Input "
+"Formats syntax."
+msgstr ""
+"Es können relative Zeitinformation gemäß dem Format der GNU Datum "
+"Eingabeformate verwendet werden."
+
+msgid "carousel items"
+msgstr "Karussell Elemente"
+
+msgid "carousells"
+msgstr "Karussells"
+
+#, fuzzy
+msgid "images"
+msgstr "Bilder"
+
+msgid "infos"
+msgstr "Infoseiten"
+
+#, fuzzy
+msgid "is Empty or NULL."
+msgstr "ist leer oder NULL."
+
+#, fuzzy
+msgid "is any middle coincidence."
+msgstr "is any middle coincidence."
+
+#, fuzzy
+msgid "is equal."
+msgstr "ist gleich."
+
+#, fuzzy
+msgid "is greater or equal than."
+msgstr "ist größer oder gleich wie."
+
+#, fuzzy
+msgid "is greater than."
+msgstr "ist größer als."
+
+#, fuzzy
+msgid "is like."
+msgstr "Ist wie."
+
+#, fuzzy
+msgid "is lower or equal than."
+msgstr "ist kleiner oder gleich wie."
+
+#, fuzzy
+msgid "is lower than."
+msgstr "ist niedriger als."
+
+#, fuzzy
+msgid "is not empty and not NULL."
+msgstr "ist nicht leer und nicht NULL."
+
+#, fuzzy
+msgid "is not equal."
+msgstr "ist ungleich"
+
+msgid "linkers"
+msgstr "Linker"
+
+msgid ""
+"with this entity you are able to manage the home info fields. Bootstrap is "
+"mandatory!"
+msgstr ""
+"Mit dieser Entität können die Felder der Infoseiten gemanaged werden. "
+"Bootstrap ist obligatorisch!"
