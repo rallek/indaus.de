@@ -26,7 +26,7 @@
                 <col id="cLinkerText" />
                 <col id="cTheLink" />
                 <col id="cBoostrapSetting" />
-                <col id="cLinkerLanguage" />
+                <col id="cLinkerLocale" />
                 <col id="cSorting" />
                 <col id="cLinkerGroup" />
                 <col id="cItemActions" />
@@ -53,8 +53,8 @@
                 <th id="hBoostrapSetting" scope="col" class="text-left">
                     <a href="{{ sort.boostrapSetting.url }}" title="{{ __f('Sort by %s', {'%s': 'boostrap setting'}) }}" class="{{ sort.boostrapSetting.class }}">{{ __('Boostrap setting') }}</a>
                 </th>
-                <th id="hLinkerLanguage" scope="col" class="text-left">
-                    <a href="{{ sort.linkerLanguage.url }}" title="{{ __f('Sort by %s', {'%s': 'linker language'}) }}" class="{{ sort.linkerLanguage.class }}">{{ __('Linker language') }}</a>
+                <th id="hLinkerLocale" scope="col" class="text-left">
+                    <a href="{{ sort.linkerLocale.url }}" title="{{ __f('Sort by %s', {'%s': 'linker locale'}) }}" class="{{ sort.linkerLocale.class }}">{{ __('Linker locale') }}</a>
                 </th>
                 <th id="hSorting" scope="col" class="text-right">
                     <a href="{{ sort.sorting.url }}" title="{{ __f('Sort by %s', {'%s': 'sorting'}) }}" class="{{ sort.sorting.class }}">{{ __('Sorting') }}</a>
@@ -98,8 +98,8 @@
                 <td headers="hBoostrapSetting" class="text-left">
                     {{ linker.boostrapSetting }}
                 </td>
-                <td headers="hLinkerLanguage" class="text-left">
-                    {{ linker.linkerLanguage|languageName }}
+                <td headers="hLinkerLocale" class="text-left">
+                    {{ linker.linkerLocale|languageName }}
                 </td>
                 <td headers="hSorting" class="text-right">
                     {{ linker.sorting }}

@@ -62,6 +62,7 @@ abstract class AbstractCarouselRepository extends EntityRepository
             'slidingTime',
             'controls',
             'carouselGroup',
+            'carouselLocale',
             'createdBy',
             'createdDate',
             'updatedBy',
@@ -217,6 +218,7 @@ abstract class AbstractCarouselRepository extends EntityRepository
     
         $parameters = [];
         $parameters['workflowState'] = $this->getRequest()->query->get('workflowState', '');
+        $parameters['carouselLocale'] = $this->getRequest()->query->get('carouselLocale', '');
         $parameters['q'] = $this->getRequest()->query->get('q', '');
         
         $parameters['controls'] = $this->getRequest()->query->get('controls', '');
@@ -699,6 +701,8 @@ abstract class AbstractCarouselRepository extends EntityRepository
             $where .= 'tbl.remarks LIKE \'%' . $fragment . '%\'';
             $where .= ((!empty($where)) ? ' OR ' : '');
             $where .= 'tbl.carouselGroup LIKE \'%' . $fragment . '%\'';
+            $where .= ((!empty($where)) ? ' OR ' : '');
+            $where .= 'tbl.carouselLocale LIKE \'%' . $fragment . '%\'';
         } else {
             $where .= ((!empty($where)) ? ' OR ' : '');
             $where .= 'tbl.carouselName LIKE \'%' . $fragment . '%\'';
@@ -708,6 +712,8 @@ abstract class AbstractCarouselRepository extends EntityRepository
             $where .= 'tbl.slidingTime = \'' . $fragment . '\'';
             $where .= ((!empty($where)) ? ' OR ' : '');
             $where .= 'tbl.carouselGroup LIKE \'%' . $fragment . '%\'';
+            $where .= ((!empty($where)) ? ' OR ' : '');
+            $where .= 'tbl.carouselLocale LIKE \'%' . $fragment . '%\'';
         }
         $where = '(' . $where . ')';
     

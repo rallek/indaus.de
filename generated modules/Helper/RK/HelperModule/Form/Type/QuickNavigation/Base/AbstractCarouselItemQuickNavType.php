@@ -18,6 +18,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Zikula\Common\Translator\TranslatorInterface;
 use Zikula\Common\Translator\TranslatorTrait;
+use ZLanguage;
 use RK\HelperModule\Helper\FeatureActivationHelper;
 use RK\HelperModule\Helper\ListEntriesHelper;
 
@@ -83,6 +84,7 @@ abstract class AbstractCarouselItemQuickNavType extends AbstractType
 
         $this->addIncomingRelationshipFields($builder, $options);
         $this->addListFields($builder, $options);
+        $this->addLocaleFields($builder, $options);
         $this->addSearchField($builder, $options);
         $this->addSortingFields($builder, $options);
         $this->addAmountField($builder, $options);
@@ -158,6 +160,26 @@ abstract class AbstractCarouselItemQuickNavType extends AbstractType
     }
 
     /**
+     * Adds locale fields.
+     *
+     * @param FormBuilderInterface $builder The form builder
+     * @param array                $options The options
+     */
+    public function addLocaleFields(FormBuilderInterface $builder, array $options)
+    {
+        $builder->add('itemLocale', 'Zikula\Bundle\FormExtensionBundle\Form\Type\LocaleType', [
+            'label' => $this->__('Item locale'),
+            'attr' => [
+                'class' => 'input-sm'
+            ],
+            'required' => false,
+            'placeholder' => $this->__('All'),
+            'choices' => array_flip(ZLanguage::getInstalledLanguageNames()),
+            'choices_as_values' => true
+        ]);
+    }
+
+    /**
      * Adds a search field.
      *
      * @param FormBuilderInterface $builder The form builder
@@ -200,6 +222,7 @@ abstract class AbstractCarouselItemQuickNavType extends AbstractType
                     $this->__('Item start date') => 'itemStartDate',
                     $this->__('Intem end date') => 'intemEndDate',
                     $this->__('Single item identifier') => 'singleItemIdentifier',
+                    $this->__('Item locale') => 'itemLocale',
                     $this->__('Creation date') => 'createdDate',
                     $this->__('Creator') => 'createdBy',
                     $this->__('Update date') => 'updatedDate',

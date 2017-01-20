@@ -21,6 +21,13 @@
         {% if workflowStateFilter is defined and workflowStateFilter != true %}
             </div>
         {% endif %}
+        {% if itemLocaleFilter is defined and itemLocaleFilter != true %}
+            <div class="hidden">
+        {% endif %}
+            {{ form_row(quickNavForm.itemLocale) }}
+        {% if itemLocaleFilter is defined and itemLocaleFilter != true %}
+            </div>
+        {% endif %}
         {% if searchFilter is defined and searchFilter != true %}
             <div class="hidden">
         {% endif %}

@@ -120,6 +120,16 @@ abstract class AbstractCarouselEntity extends EntityAccess
      */
     protected $carouselGroup = '';
     
+    /**
+     * @ORM\Column(length=255)
+     * @Assert\NotBlank()
+     * @Assert\Regex(pattern="/\s/", match=false, message="This value must not contain space chars.")
+     * @Assert\Length(min="0", max="255")
+     * @Assert\Locale()
+     * @var string $carouselLocale
+     */
+    protected $carouselLocale = '';
+    
     
     /**
      * Bidirectional - One carousel [carousel] has many carouselItems [carousel items] (INVERSE SIDE).
@@ -345,6 +355,28 @@ abstract class AbstractCarouselEntity extends EntityAccess
     public function setCarouselGroup($carouselGroup)
     {
         $this->carouselGroup = isset($carouselGroup) ? $carouselGroup : '';
+    }
+    
+    /**
+     * Returns the carousel locale.
+     *
+     * @return string
+     */
+    public function getCarouselLocale()
+    {
+        return $this->carouselLocale;
+    }
+    
+    /**
+     * Sets the carousel locale.
+     *
+     * @param string $carouselLocale
+     *
+     * @return void
+     */
+    public function setCarouselLocale($carouselLocale)
+    {
+        $this->carouselLocale = isset($carouselLocale) ? $carouselLocale : '';
     }
     
     

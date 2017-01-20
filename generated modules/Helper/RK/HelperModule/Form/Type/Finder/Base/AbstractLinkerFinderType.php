@@ -154,7 +154,7 @@ abstract class AbstractLinkerFinderType extends AbstractType
                     $this->__('Linker text') => 'linkerText',
                     $this->__('The link') => 'theLink',
                     $this->__('Boostrap setting') => 'boostrapSetting',
-                    $this->__('Linker language') => 'linkerLanguage',
+                    $this->__('Linker locale') => 'linkerLocale',
                     $this->__('Sorting') => 'sorting',
                     $this->__('Linker group') => 'linkerGroup',
                     $this->__('Creation date') => 'createdDate',

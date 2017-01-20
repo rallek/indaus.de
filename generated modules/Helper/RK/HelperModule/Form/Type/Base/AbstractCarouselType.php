@@ -18,6 +18,7 @@ use Symfony\Component\Form\FormInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Zikula\Common\Translator\TranslatorInterface;
 use Zikula\Common\Translator\TranslatorTrait;
+use ZLanguage;
 use RK\HelperModule\Entity\Factory\HelperFactory;
 use RK\HelperModule\Helper\FeatureActivationHelper;
 use RK\HelperModule\Helper\ListEntriesHelper;
@@ -152,6 +153,18 @@ abstract class AbstractCarouselType extends AbstractType
                 'class' => ' validate-nospace',
                 'title' => $this->__('Enter the carousel group of the carousel')
             ],'required' => false,
+        ]);
+        
+        $builder->add('carouselLocale', 'Zikula\Bundle\FormExtensionBundle\Form\Type\LocaleType', [
+            'label' => $this->__('Carousel locale') . ':',
+            'empty_data' => '',
+            'attr' => [
+                'maxlength' => 255,
+                'class' => ' validate-nospace',
+                'title' => $this->__('Choose the carousel locale of the carousel')
+            ],'required' => true,
+            'choices' => array_flip(ZLanguage::getInstalledLanguageNames()),
+            'choices_as_values' => true
         ]);
     }
 

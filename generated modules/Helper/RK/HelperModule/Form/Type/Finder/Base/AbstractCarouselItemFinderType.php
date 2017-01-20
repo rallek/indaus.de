@@ -158,6 +158,7 @@ abstract class AbstractCarouselItemFinderType extends AbstractType
                     $this->__('Item start date') => 'itemStartDate',
                     $this->__('Intem end date') => 'intemEndDate',
                     $this->__('Single item identifier') => 'singleItemIdentifier',
+                    $this->__('Item locale') => 'itemLocale',
                     $this->__('Creation date') => 'createdDate',
                     $this->__('Creator') => 'createdBy',
                     $this->__('Update date') => 'updatedDate',

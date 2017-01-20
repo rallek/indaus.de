@@ -172,13 +172,13 @@ abstract class AbstractLinkerType extends AbstractType
             ],'required' => true,
         ]);
         
-        $builder->add('linkerLanguage', 'Zikula\Bundle\FormExtensionBundle\Form\Type\LocaleType', [
-            'label' => $this->__('Linker language') . ':',
+        $builder->add('linkerLocale', 'Zikula\Bundle\FormExtensionBundle\Form\Type\LocaleType', [
+            'label' => $this->__('Linker locale') . ':',
             'empty_data' => '',
             'attr' => [
                 'maxlength' => 255,
                 'class' => ' validate-nospace',
-                'title' => $this->__('Choose the linker language of the linker')
+                'title' => $this->__('Choose the linker locale of the linker')
             ],'required' => false,
             'placeholder' => $this->__('All'),
             'choices' => array_flip(ZLanguage::getInstalledLanguageNames()),

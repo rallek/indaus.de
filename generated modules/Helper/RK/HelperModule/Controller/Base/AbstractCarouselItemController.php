@@ -217,6 +217,7 @@ abstract class AbstractCarouselItemController extends AbstractController
             new Column('itemStartDate'),
             new Column('intemEndDate'),
             new Column('singleItemIdentifier'),
+            new Column('itemLocale'),
             new Column('carousel'),
             new Column('createdBy'),
             new Column('createdDate'),

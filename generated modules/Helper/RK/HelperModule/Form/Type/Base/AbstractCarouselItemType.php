@@ -22,6 +22,7 @@ use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Zikula\Common\Translator\TranslatorInterface;
 use Zikula\Common\Translator\TranslatorTrait;
+use ZLanguage;
 use RK\HelperModule\Entity\Factory\HelperFactory;
 use RK\HelperModule\Helper\FeatureActivationHelper;
 use RK\HelperModule\Helper\ListEntriesHelper;
@@ -246,6 +247,19 @@ abstract class AbstractCarouselItemType extends AbstractType
                 'class' => '',
                 'title' => $this->__('link external ?')
             ],'required' => false,
+        ]);
+        
+        $builder->add('itemLocale', 'Zikula\Bundle\FormExtensionBundle\Form\Type\LocaleType', [
+            'label' => $this->__('Item locale') . ':',
+            'empty_data' => '',
+            'attr' => [
+                'maxlength' => 255,
+                'class' => ' validate-nospace',
+                'title' => $this->__('Choose the item locale of the carousel item')
+            ],'required' => false,
+            'placeholder' => $this->__('All'),
+            'choices' => array_flip(ZLanguage::getInstalledLanguageNames()),
+            'choices_as_values' => true
         ]);
     }
 

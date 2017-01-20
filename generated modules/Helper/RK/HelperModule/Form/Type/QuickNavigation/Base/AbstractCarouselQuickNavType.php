@@ -16,6 +16,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Zikula\Common\Translator\TranslatorInterface;
 use Zikula\Common\Translator\TranslatorTrait;
+use ZLanguage;
 use RK\HelperModule\Helper\FeatureActivationHelper;
 use RK\HelperModule\Helper\ListEntriesHelper;
 
@@ -73,6 +74,7 @@ abstract class AbstractCarouselQuickNavType extends AbstractType
         ;
 
         $this->addListFields($builder, $options);
+        $this->addLocaleFields($builder, $options);
         $this->addSearchField($builder, $options);
         $this->addSortingFields($builder, $options);
         $this->addAmountField($builder, $options);
@@ -116,6 +118,25 @@ abstract class AbstractCarouselQuickNavType extends AbstractType
     }
 
     /**
+     * Adds locale fields.
+     *
+     * @param FormBuilderInterface $builder The form builder
+     * @param array                $options The options
+     */
+    public function addLocaleFields(FormBuilderInterface $builder, array $options)
+    {
+        $builder->add('carouselLocale', 'Zikula\Bundle\FormExtensionBundle\Form\Type\LocaleType', [
+            'label' => $this->__('Carousel locale'),
+            'attr' => [
+                'class' => 'input-sm'
+            ],
+            'required' => false,
+            'choices' => array_flip(ZLanguage::getInstalledLanguageNames()),
+            'choices_as_values' => true
+        ]);
+    }
+
+    /**
      * Adds a search field.
      *
      * @param FormBuilderInterface $builder The form builder
@@ -154,6 +175,7 @@ abstract class AbstractCarouselQuickNavType extends AbstractType
                     $this->__('Sliding time') => 'slidingTime',
                     $this->__('Controls') => 'controls',
                     $this->__('Carousel group') => 'carouselGroup',
+                    $this->__('Carousel locale') => 'carouselLocale',
                     $this->__('Creation date') => 'createdDate',
                     $this->__('Creator') => 'createdBy',
                     $this->__('Update date') => 'updatedDate',

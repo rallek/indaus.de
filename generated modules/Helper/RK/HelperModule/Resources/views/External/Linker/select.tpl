@@ -31,7 +31,7 @@
         <option value="linkerText"{if $sort eq 'linkerText'} selected="selected"{/if}>{gt text='Linker text'}</option>
         <option value="theLink"{if $sort eq 'theLink'} selected="selected"{/if}>{gt text='The link'}</option>
         <option value="boostrapSetting"{if $sort eq 'boostrapSetting'} selected="selected"{/if}>{gt text='Boostrap setting'}</option>
-        <option value="linkerLanguage"{if $sort eq 'linkerLanguage'} selected="selected"{/if}>{gt text='Linker language'}</option>
+        <option value="linkerLocale"{if $sort eq 'linkerLocale'} selected="selected"{/if}>{gt text='Linker locale'}</option>
         <option value="sorting"{if $sort eq 'sorting'} selected="selected"{/if}>{gt text='Sorting'}</option>
         <option value="linkerGroup"{if $sort eq 'linkerGroup'} selected="selected"{/if}>{gt text='Linker group'}</option>
         <option value="createdDate"{if $sort eq 'createdDate'} selected="selected"{/if}>{gt text='Creation date'}</option>

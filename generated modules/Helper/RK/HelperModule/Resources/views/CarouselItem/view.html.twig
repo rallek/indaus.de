@@ -31,6 +31,7 @@
                 <col id="cIntemEndDate" />
                 <col id="cSingleItemIdentifier" />
                 <col id="cLinkExternal" />
+                <col id="cItemLocale" />
                 <col id="cCarousel" />
                 <col id="cItemActions" />
             </colgroup>
@@ -70,6 +71,9 @@
                 </th>
                 <th id="hLinkExternal" scope="col" class="text-center z-order-unsorted">
                     {{ __('Link external') }}
+                </th>
+                <th id="hItemLocale" scope="col" class="text-left">
+                    <a href="{{ sort.itemLocale.url }}" title="{{ __f('Sort by %s', {'%s': 'item locale'}) }}" class="{{ sort.itemLocale.class }}">{{ __('Item locale') }}</a>
                 </th>
                 <th id="hCarousel" scope="col" class="text-left">
                     <a href="{{ sort.carousel.url }}" title="{{ __f('Sort by %s', {'%s': 'carousel'}) }}" class="{{ sort.carousel.class }}">{{ __('Carousel') }}</a>
@@ -129,6 +133,9 @@
                         <i class="fa fa-times" title="{{ __('No') }}"></i>
                     {% endif %}
                 </td>
+                <td headers="hItemLocale" class="text-left">
+                    {{ carouselItem.itemLocale|languageName }}
+                </td>
                 <td headers="hCarousel" class="text-left">
                     {% if carouselItem.carousel|default %}
                           {{ carouselItem.carousel.getTitleFromDisplayPattern() }}
@@ -146,7 +153,7 @@
             </tr>
         {% else %}
             <tr class="z-{{ routeArea == 'admin' ? 'admin' : 'data' }}tableempty">
-                <td class="text-left" colspan="{% if routeArea == 'admin' %}13{% else %}12{% endif %}">
+                <td class="text-left" colspan="{% if routeArea == 'admin' %}14{% else %}13{% endif %}">
             {{ __('No carousel items found.') }}
               </td>
             </tr>

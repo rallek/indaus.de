@@ -149,7 +149,7 @@ abstract class AbstractLinkerController extends AbstractController
             new Column('linkerText'),
             new Column('theLink'),
             new Column('boostrapSetting'),
-            new Column('linkerLanguage'),
+            new Column('linkerLocale'),
             new Column('sorting'),
             new Column('linkerGroup'),
             new Column('createdBy'),

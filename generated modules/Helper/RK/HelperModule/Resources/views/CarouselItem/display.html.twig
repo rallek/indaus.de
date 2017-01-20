@@ -73,6 +73,10 @@
             {% endif %}
             </dd>
         {% endif %}
+        {% if carouselItem.itemLocale is not empty %}
+            <dt>{{ __('Item locale') }}</dt>
+            <dd>{{ carouselItem.itemLocale|languageName }}</dd>
+        {% endif %}
         {% if carouselItem.carousel|default %}
             <dt>{{ __('Carousel') }}</dt>
             <dd>

@@ -124,8 +124,8 @@ abstract class AbstractLinkerQuickNavType extends AbstractType
      */
     public function addLocaleFields(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('linkerLanguage', 'Zikula\Bundle\FormExtensionBundle\Form\Type\LocaleType', [
-            'label' => $this->__('Linker language'),
+        $builder->add('linkerLocale', 'Zikula\Bundle\FormExtensionBundle\Form\Type\LocaleType', [
+            'label' => $this->__('Linker locale'),
             'attr' => [
                 'class' => 'input-sm'
             ],
@@ -175,7 +175,7 @@ abstract class AbstractLinkerQuickNavType extends AbstractType
                     $this->__('Linker text') => 'linkerText',
                     $this->__('The link') => 'theLink',
                     $this->__('Boostrap setting') => 'boostrapSetting',
-                    $this->__('Linker language') => 'linkerLanguage',
+                    $this->__('Linker locale') => 'linkerLocale',
                     $this->__('Sorting') => 'sorting',
                     $this->__('Linker group') => 'linkerGroup',
                     $this->__('Creation date') => 'createdDate',

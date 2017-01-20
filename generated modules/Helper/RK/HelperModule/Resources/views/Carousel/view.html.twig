@@ -24,6 +24,7 @@
                 <col id="cSlidingTime" />
                 <col id="cControls" />
                 <col id="cCarouselGroup" />
+                <col id="cCarouselLocale" />
                 <col id="cItemActions" />
             </colgroup>
             <thead>
@@ -47,6 +48,9 @@
                 </th>
                 <th id="hCarouselGroup" scope="col" class="text-left">
                     <a href="{{ sort.carouselGroup.url }}" title="{{ __f('Sort by %s', {'%s': 'carousel group'}) }}" class="{{ sort.carouselGroup.class }}">{{ __('Carousel group') }}</a>
+                </th>
+                <th id="hCarouselLocale" scope="col" class="text-left">
+                    <a href="{{ sort.carouselLocale.url }}" title="{{ __f('Sort by %s', {'%s': 'carousel locale'}) }}" class="{{ sort.carouselLocale.class }}">{{ __('Carousel locale') }}</a>
                 </th>
                 <th id="hItemActions" scope="col" class="text-right z-order-unsorted">{{ __('Actions') }}</th>
             </tr>
@@ -79,6 +83,9 @@
                 <td headers="hCarouselGroup" class="text-left">
                     {{ carousel.carouselGroup }}
                 </td>
+                <td headers="hCarouselLocale" class="text-left">
+                    {{ carousel.carouselLocale|languageName }}
+                </td>
                 <td id="itemActions{{ carousel.id }}" headers="hItemActions" class="actions text-right nowrap z-w02">
                     {% set itemActions = knp_menu_get('RKHelperModule:ItemActionsMenu:menu', [], { entity: carousel, area: routeArea, context: 'view' }) %}
                     <div class="dropdown">
@@ -89,7 +96,7 @@
             </tr>
         {% else %}
             <tr class="z-{{ routeArea == 'admin' ? 'admin' : 'data' }}tableempty">
-                <td class="text-left" colspan="{% if routeArea == 'admin' %}7{% else %}6{% endif %}">
+                <td class="text-left" colspan="{% if routeArea == 'admin' %}8{% else %}7{% endif %}">
             {{ __('No carousells found.') }}
               </td>
             </tr>

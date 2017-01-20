@@ -150,9 +150,9 @@ abstract class AbstractLinkerEntity extends EntityAccess
      * @Assert\Regex(pattern="/\s/", match=false, message="This value must not contain space chars.")
      * @Assert\Length(min="0", max="255")
      * @Assert\Locale()
-     * @var string $linkerLanguage
+     * @var string $linkerLocale
      */
-    protected $linkerLanguage = '';
+    protected $linkerLocale = '';
     
     /**
      * @Gedmo\SortablePosition
@@ -435,25 +435,25 @@ abstract class AbstractLinkerEntity extends EntityAccess
     }
     
     /**
-     * Returns the linker language.
+     * Returns the linker locale.
      *
      * @return string
      */
-    public function getLinkerLanguage()
+    public function getLinkerLocale()
     {
-        return $this->linkerLanguage;
+        return $this->linkerLocale;
     }
     
     /**
-     * Sets the linker language.
+     * Sets the linker locale.
      *
-     * @param string $linkerLanguage
+     * @param string $linkerLocale
      *
      * @return void
      */
-    public function setLinkerLanguage($linkerLanguage)
+    public function setLinkerLocale($linkerLocale)
     {
-        $this->linkerLanguage = isset($linkerLanguage) ? $linkerLanguage : '';
+        $this->linkerLocale = isset($linkerLocale) ? $linkerLocale : '';
     }
     
     /**

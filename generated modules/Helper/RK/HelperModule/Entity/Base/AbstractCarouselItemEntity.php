@@ -188,6 +188,16 @@ abstract class AbstractCarouselItemEntity extends EntityAccess
      */
     protected $linkExternal = false;
     
+    /**
+     * @ORM\Column(length=255)
+     * @Assert\NotNull()
+     * @Assert\Regex(pattern="/\s/", match=false, message="This value must not contain space chars.")
+     * @Assert\Length(min="0", max="255")
+     * @Assert\Locale()
+     * @var string $itemLocale
+     */
+    protected $itemLocale = '';
+    
     
     /**
      * Bidirectional - Many carouselItems [carousel items] are linked by one carousel [carousel] (OWNING SIDE).
@@ -579,6 +589,28 @@ abstract class AbstractCarouselItemEntity extends EntityAccess
         if ($linkExternal !== $this->linkExternal) {
             $this->linkExternal = (bool)$linkExternal;
         }
+    }
+    
+    /**
+     * Returns the item locale.
+     *
+     * @return string
+     */
+    public function getItemLocale()
+    {
+        return $this->itemLocale;
+    }
+    
+    /**
+     * Sets the item locale.
+     *
+     * @param string $itemLocale
+     *
+     * @return void
+     */
+    public function setItemLocale($itemLocale)
+    {
+        $this->itemLocale = isset($itemLocale) ? $itemLocale : '';
     }
     
     

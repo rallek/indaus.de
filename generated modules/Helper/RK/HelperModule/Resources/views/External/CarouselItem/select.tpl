@@ -36,6 +36,7 @@
         <option value="intemEndDate"{if $sort eq 'intemEndDate'} selected="selected"{/if}>{gt text='Intem end date'}</option>
         <option value="singleItemIdentifier"{if $sort eq 'singleItemIdentifier'} selected="selected"{/if}>{gt text='Single item identifier'}</option>
         <option value="linkExternal"{if $sort eq 'linkExternal'} selected="selected"{/if}>{gt text='Link external'}</option>
+        <option value="itemLocale"{if $sort eq 'itemLocale'} selected="selected"{/if}>{gt text='Item locale'}</option>
         <option value="createdDate"{if $sort eq 'createdDate'} selected="selected"{/if}>{gt text='Creation date'}</option>
         <option value="createdBy"{if $sort eq 'createdBy'} selected="selected"{/if}>{gt text='Creator'}</option>
         <option value="updatedDate"{if $sort eq 'updatedDate'} selected="selected"{/if}>{gt text='Update date'}</option>

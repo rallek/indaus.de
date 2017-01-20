@@ -131,6 +131,7 @@ abstract class AbstractCarouselFinderType extends AbstractType
                     $this->__('Sliding time') => 'slidingTime',
                     $this->__('Controls') => 'controls',
                     $this->__('Carousel group') => 'carouselGroup',
+                    $this->__('Carousel locale') => 'carouselLocale',
                     $this->__('Creation date') => 'createdDate',
                     $this->__('Creator') => 'createdBy',
                     $this->__('Update date') => 'updatedDate',

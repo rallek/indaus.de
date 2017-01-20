@@ -48,9 +48,9 @@
             <dt>{{ __('Boostrap setting') }}</dt>
             <dd>{{ linker.boostrapSetting }}</dd>
         {% endif %}
-        {% if linker.linkerLanguage is not empty %}
-            <dt>{{ __('Linker language') }}</dt>
-            <dd>{{ linker.linkerLanguage|languageName }}</dd>
+        {% if linker.linkerLocale is not empty %}
+            <dt>{{ __('Linker locale') }}</dt>
+            <dd>{{ linker.linkerLocale|languageName }}</dd>
         {% endif %}
         {% if linker.sorting is not empty %}
             <dt>{{ __('Sorting') }}</dt>

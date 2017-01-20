@@ -149,6 +149,7 @@ abstract class AbstractCarouselController extends AbstractController
             new Column('slidingTime'),
             new Column('controls'),
             new Column('carouselGroup'),
+            new Column('carouselLocale'),
             new Column('createdBy'),
             new Column('createdDate'),
             new Column('updatedBy'),

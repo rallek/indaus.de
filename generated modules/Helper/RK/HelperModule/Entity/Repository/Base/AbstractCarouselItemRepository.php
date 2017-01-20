@@ -67,6 +67,7 @@ abstract class AbstractCarouselItemRepository extends EntityRepository
             'itemStartDate',
             'intemEndDate',
             'singleItemIdentifier',
+            'itemLocale',
             'createdBy',
             'createdDate',
             'updatedBy',
@@ -227,6 +228,7 @@ abstract class AbstractCarouselItemRepository extends EntityRepository
         $parameters = [];
         $parameters['carousel'] = $this->getRequest()->query->get('carousel', 0);
         $parameters['workflowState'] = $this->getRequest()->query->get('workflowState', '');
+        $parameters['itemLocale'] = $this->getRequest()->query->get('itemLocale', '');
         $parameters['q'] = $this->getRequest()->query->get('q', '');
         
         $parameters['linkExternal'] = $this->getRequest()->query->get('linkExternal', '');
@@ -727,6 +729,8 @@ abstract class AbstractCarouselItemRepository extends EntityRepository
             $where .= 'tbl.intemEndDate = \'' . $fragment . '\'';
             $where .= ((!empty($where)) ? ' OR ' : '');
             $where .= 'tbl.singleItemIdentifier LIKE \'%' . $fragment . '%\'';
+            $where .= ((!empty($where)) ? ' OR ' : '');
+            $where .= 'tbl.itemLocale LIKE \'%' . $fragment . '%\'';
         } else {
             $where .= ((!empty($where)) ? ' OR ' : '');
             $where .= 'tbl.itemName LIKE \'%' . $fragment . '%\'';
@@ -746,6 +750,8 @@ abstract class AbstractCarouselItemRepository extends EntityRepository
             $where .= 'tbl.intemEndDate = \'' . $fragment . '\'';
             $where .= ((!empty($where)) ? ' OR ' : '');
             $where .= 'tbl.singleItemIdentifier LIKE \'%' . $fragment . '%\'';
+            $where .= ((!empty($where)) ? ' OR ' : '');
+            $where .= 'tbl.itemLocale LIKE \'%' . $fragment . '%\'';
         }
         $where = '(' . $where . ')';
     

@@ -14,11 +14,11 @@
         {% if workflowStateFilter is defined and workflowStateFilter != true %}
             </div>
         {% endif %}
-        {% if linkerLanguageFilter is defined and linkerLanguageFilter != true %}
+        {% if linkerLocaleFilter is defined and linkerLocaleFilter != true %}
             <div class="hidden">
         {% endif %}
-            {{ form_row(quickNavForm.linkerLanguage) }}
-        {% if linkerLanguageFilter is defined and linkerLanguageFilter != true %}
+            {{ form_row(quickNavForm.linkerLocale) }}
+        {% if linkerLocaleFilter is defined and linkerLocaleFilter != true %}
             </div>
         {% endif %}
         {% if searchFilter is defined and searchFilter != true %}

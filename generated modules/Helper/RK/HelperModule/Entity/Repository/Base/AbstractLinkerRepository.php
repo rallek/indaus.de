@@ -62,7 +62,7 @@ abstract class AbstractLinkerRepository extends SortableRepository
             'linkerText',
             'theLink',
             'boostrapSetting',
-            'linkerLanguage',
+            'linkerLocale',
             'sorting',
             'linkerGroup',
             'createdBy',
@@ -224,7 +224,7 @@ abstract class AbstractLinkerRepository extends SortableRepository
     
         $parameters = [];
         $parameters['workflowState'] = $this->getRequest()->query->get('workflowState', '');
-        $parameters['linkerLanguage'] = $this->getRequest()->query->get('linkerLanguage', '');
+        $parameters['linkerLocale'] = $this->getRequest()->query->get('linkerLocale', '');
         $parameters['q'] = $this->getRequest()->query->get('q', '');
         
     
@@ -704,7 +704,7 @@ abstract class AbstractLinkerRepository extends SortableRepository
             $where .= ((!empty($where)) ? ' OR ' : '');
             $where .= 'tbl.boostrapSetting LIKE \'%' . $fragment . '%\'';
             $where .= ((!empty($where)) ? ' OR ' : '');
-            $where .= 'tbl.linkerLanguage LIKE \'%' . $fragment . '%\'';
+            $where .= 'tbl.linkerLocale LIKE \'%' . $fragment . '%\'';
             $where .= ((!empty($where)) ? ' OR ' : '');
             $where .= 'tbl.linkerGroup LIKE \'%' . $fragment . '%\'';
         } else {
@@ -719,7 +719,7 @@ abstract class AbstractLinkerRepository extends SortableRepository
             $where .= ((!empty($where)) ? ' OR ' : '');
             $where .= 'tbl.boostrapSetting LIKE \'%' . $fragment . '%\'';
             $where .= ((!empty($where)) ? ' OR ' : '');
-            $where .= 'tbl.linkerLanguage LIKE \'%' . $fragment . '%\'';
+            $where .= 'tbl.linkerLocale LIKE \'%' . $fragment . '%\'';
             $where .= ((!empty($where)) ? ' OR ' : '');
             $where .= 'tbl.sorting = \'' . $fragment . '\'';
             $where .= ((!empty($where)) ? ' OR ' : '');
