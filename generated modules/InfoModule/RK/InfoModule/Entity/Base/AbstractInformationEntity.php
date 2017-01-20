@@ -304,8 +304,8 @@ abstract class AbstractInformationEntity extends EntityAccess implements Transla
      */
     public static function getWorkflowStateAllowedValues()
     {
-        $serviceManager = ServiceUtil::getManager();
-        $helper = $serviceManager->get('rk_info_module.listentries_helper');
+        $container = ServiceUtil::get('service_container');
+        $helper = $container->get('rk_info_module.listentries_helper');
         $listEntries = $helper->getWorkflowStateEntriesForInformation();
     
         $allowedValues = ['initial'];

@@ -58,7 +58,7 @@ abstract class AbstractInfoFactory
      */
     public function createInformation()
     {
-        $entityClass = 'RK\\InfoModule\\Entity\\informationEntity';
+        $entityClass = 'RK\\InfoModule\\Entity\\InformationEntity';
 
         return new $entityClass();
     }

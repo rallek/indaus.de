@@ -1,0 +1,5 @@
+{# Purpose of this template: Display item information for previewing from other modules #}
+<dl id="info{{ info.id }}">
+<dt>{{ info.getTitleFromDisplayPattern()|notifyFilters('helper.filter_hooks.infos.filter') }}</dt>
+{% if info.infoDescription is not empty %}<dd>{{ info.infoDescription }}</dd>{% endif %}
+</dl>
