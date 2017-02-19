@@ -1,0 +1,121 @@
+services:
+    # Form types
+    
+    rk_reference_module.form.type.attachedimagequicknav:
+        class: RK\ReferenceModule\Form\Type\QuickNavigation\AttachedImageQuickNavType
+        arguments:
+            - "@translator.default"
+            - "@rk_reference_module.listentries_helper"
+            - "@zikula_settings_module.locale_api"
+        tags:
+            - { name: form.type }
+    
+    rk_reference_module.form.type.activityquicknav:
+        class: RK\ReferenceModule\Form\Type\QuickNavigation\ActivityQuickNavType
+        arguments:
+            - "@translator.default"
+            - "@request_stack"
+            - "@rk_reference_module.listentries_helper"
+            - "@zikula_settings_module.locale_api"
+        tags:
+            - { name: form.type }
+    
+    rk_reference_module.form.handler.attachedimage:
+        class: RK\ReferenceModule\Form\Handler\AttachedImage\EditHandler
+        arguments:
+            - "@kernel"
+            - "@translator.default"
+            - "@form.factory"
+            - "@request_stack"
+            - "@router"
+            - "@logger"
+            - "@zikula_permissions_module.api.permission"
+            - "@zikula_users_module.current_user"
+            - "@rk_reference_module.entity_factory"
+            - "@rk_reference_module.controller_helper"
+            - "@rk_reference_module.model_helper"
+            - "@rk_reference_module.selection_helper"
+            - "@rk_reference_module.workflow_helper"
+            - "@rk_reference_module.hook_helper"
+        calls:
+            - [setLockingApi, ["@?zikula_pagelock_module.api.locking"]]
+        tags:
+            - { name: form.type }
+    
+    rk_reference_module.form.type.attachedimage:
+        class: RK\ReferenceModule\Form\Type\AttachedImageType
+        arguments:
+            - "@translator.default"
+            - "@rk_reference_module.entity_factory"
+            - "@rk_reference_module.listentries_helper"
+            - "@zikula_settings_module.locale_api"
+        tags:
+            - { name: form.type }
+    
+    rk_reference_module.form.handler.activity:
+        class: RK\ReferenceModule\Form\Handler\Activity\EditHandler
+        arguments:
+            - "@kernel"
+            - "@translator.default"
+            - "@form.factory"
+            - "@request_stack"
+            - "@router"
+            - "@logger"
+            - "@zikula_permissions_module.api.permission"
+            - "@zikula_users_module.current_user"
+            - "@rk_reference_module.entity_factory"
+            - "@rk_reference_module.controller_helper"
+            - "@rk_reference_module.model_helper"
+            - "@rk_reference_module.selection_helper"
+            - "@rk_reference_module.workflow_helper"
+            - "@rk_reference_module.hook_helper"
+        calls:
+            - [setLockingApi, ["@?zikula_pagelock_module.api.locking"]]
+        tags:
+            - { name: form.type }
+    
+    rk_reference_module.form.type.activity:
+        class: RK\ReferenceModule\Form\Type\ActivityType
+        arguments:
+            - "@translator.default"
+            - "@rk_reference_module.entity_factory"
+            - "@rk_reference_module.listentries_helper"
+            - "@zikula_settings_module.locale_api"
+        tags:
+            - { name: form.type }
+    
+    rk_reference_module.form.type.deleteentity:
+        class: RK\ReferenceModule\Form\DeleteEntityType
+        arguments:
+            - "@translator.default"
+        tags:
+            - { name: form.type }
+    
+    rk_reference_module.form.type.block.itemlist:
+        class: RK\ReferenceModule\Block\Form\Type\ItemListBlockType
+        arguments:
+            - "@translator.default"
+        tags:
+            - { name: form.type }
+    
+    rk_reference_module.form.type.attachedimagefinder:
+        class: RK\ReferenceModule\Form\Type\Finder\AttachedImageFinderType
+        arguments:
+            - "@translator.default"
+        tags:
+            - { name: form.type }
+    
+    rk_reference_module.form.type.activityfinder:
+        class: RK\ReferenceModule\Form\Type\Finder\ActivityFinderType
+        arguments:
+            - "@translator.default"
+        tags:
+            - { name: form.type }
+    
+    rk_reference_module.form.type.appsettings:
+        class: RK\ReferenceModule\Form\AppSettingsType
+        arguments:
+            - "@translator.default"
+            - "@zikula_extensions_module.api.variable"
+        tags:
+            - { name: form.type }

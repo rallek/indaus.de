@@ -1,0 +1,89 @@
+services:
+    # Event subscriber and listener classes
+    rk_reference_module.entity_lifecycle_listener:
+        class: RK\ReferenceModule\Listener\EntityLifecycleListener
+        arguments:
+            - "@service_container"
+        tags:
+            - { name: doctrine.event_subscriber }
+    
+    rk_reference_module.core_listener:
+        class: RK\ReferenceModule\Listener\CoreListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_reference_module.kernel_listener:
+        class: RK\ReferenceModule\Listener\KernelListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_reference_module.installer_listener:
+        class: RK\ReferenceModule\Listener\InstallerListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_reference_module.moduledispatch_listener:
+        class: RK\ReferenceModule\Listener\ModuleDispatchListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_reference_module.mailer_listener:
+        class: RK\ReferenceModule\Listener\MailerListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_reference_module.page_listener:
+        class: RK\ReferenceModule\Listener\PageListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_reference_module.theme_listener:
+        class: RK\ReferenceModule\Listener\ThemeListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_reference_module.view_listener:
+        class: RK\ReferenceModule\Listener\ViewListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_reference_module.userlogin_listener:
+        class: RK\ReferenceModule\Listener\UserLoginListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_reference_module.userlogout_listener:
+        class: RK\ReferenceModule\Listener\UserLogoutListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_reference_module.user_listener:
+        class: RK\ReferenceModule\Listener\UserListener
+        arguments:
+            - "@translator.default"
+            - "@rk_reference_module.entity_factory"
+            - "@zikula_users_module.current_user"
+            - "@logger"
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_reference_module.userregistration_listener:
+        class: RK\ReferenceModule\Listener\UserRegistrationListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_reference_module.users_listener:
+        class: RK\ReferenceModule\Listener\UsersListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_reference_module.group_listener:
+        class: RK\ReferenceModule\Listener\GroupListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_reference_module.thirdparty_listener:
+        class: RK\ReferenceModule\Listener\ThirdPartyListener
+        tags:
+            - { name: kernel.event_subscriber }
+    

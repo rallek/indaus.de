@@ -1,0 +1,51 @@
+{# Purpose of this template: Display one certain activity within an external context #}
+{{ pageAddAsset('javascript', asset('magnific-popup/jquery.magnific-popup.min.js')) }}
+{{ pageAddAsset('stylesheet', asset('magnific-popup/magnific-popup.css')) }}
+{{ pageAddAsset('javascript', zasset('@RKReferenceModule:js/RKReferenceModule.js')) }}
+<div id="activity{$activity.id}" class="rkreferencemodule-external-activity">
+{% if displayMode == 'link' %}
+    <p class="rkreferencemodule-external-link">
+    <a href="{{ path('rkreferencemodule_activity_display', { 'id': activity.id }) }}" title="{{ activity.getTitleFromDisplayPattern()|e('html_attr') }}">
+    {{ activity.getTitleFromDisplayPattern()|notifyFilters('reference.filter_hooks.activities.filter') }}
+    </a>
+    </p>
+{% endif %}
+{% if hasPermission('RKReferenceModule::', '::', 'ACCESS_EDIT') %}
+    {# for normal users without edit permission show only the actual file per default #}
+    {% if displayMode == 'embed' %}
+        <p class="rkreferencemodule-external-title">
+            <strong>{{ activity.getTitleFromDisplayPattern()|notifyFilters('reference.filter_hooks.activities.filter') }}</strong>
+        </p>
+    {% endif %}
+{% endif %}
+
+{% if displayMode == 'link' %}
+{% elseif displayMode == 'embed' %}
+    <div class="rkreferencemodule-external-snippet">
+        {% if activity.titleImageMeta|default %}
+        <a href="{{ activity.titleImageUrl }}" title="{{ activity.getTitleFromDisplayPattern()|e('html_attr') }}"{% if activity.titleImageMeta.isImage %} class="image-link"{% endif %}>
+        {% if activity.titleImageMeta.isImage %}
+            {% set thumbOptions = attribute(thumbRuntimeOptions, 'activityTitleImage') %}
+            <img src="{{ activity.titleImage.getPathname()|imagine_filter('zkroot', thumbOptions) }}" alt="{{ activity.getTitleFromDisplayPattern()|e('html_attr') }}" width="{{ thumbOptions.thumbnail.size[0] }}" height="{{ thumbOptions.thumbnail.size[1] }}" class="img-thumbnail" />
+        {% else %}
+            {{ __('Download') }} ({{ activity.titleImageMeta.size|rkreferencemodule_fileSize(activity.titleImage.getPathname(), false, false) }})
+        {% endif %}
+        </a>
+        {% endif %}
+    </div>
+
+    {# you can distinguish the context like this: #}
+    {# % if source == 'contentType' %}
+        ...
+    {% elseif source == 'scribite' %}
+        ...
+    {% endif % #}
+
+    {# you can enable more details about the item: #}
+    {#
+        <p class="rkreferencemodule-external-description">
+            {% if activity.teaserDescription is not empty %}{{ activity.teaserDescription }}<br />{% endif %}
+        </p>
+    #}
+{% endif %}
+</div>

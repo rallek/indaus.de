@@ -1,0 +1,143 @@
+application "Reference" {
+    documentation "This module will be used to show the activities for the indaus company"
+    vendor "RK"
+    author "Ralf Koester"
+    email "ralf@familie-koester.de"
+    url "http://k62.de"
+    version "0.1.0"
+    prefix "refere"
+    generatorSettings {
+        settingsContainer "Settings"
+        generateMailzApi false
+        generateModerationBlock false
+        generateNewsletterPlugin false
+        generateModerationPanel false
+        generatePendingContentSupport false
+        generateTagSupport false
+        generateMultiHookNeedles false
+        generateRssTemplates false
+        generateAtomTemplates false
+        generateCsvTemplates false
+        generateXmlTemplates false
+        generateJsonTemplates false
+        generateKmlTemplates false
+        generateIcsTemplates false
+        versionAllGeneratedFiles false
+        generatePoweredByBacklinksIntoFooterTemplates false
+        generateTests false
+    }
+    entities {
+        entity "attachedImage" {
+            nameMultiple "attachedImages"
+            displayPattern "#title#"
+            fields {
+                string "displayLanguage" locale {
+                    documentation "Select in which language the activity should be shown. Select \"all\" for every language."
+                    mandatory false
+                    displayType VIEW_SORTING
+                },
+                
+            string "title" {
+                    documentation "a title for the image"
+                },
+                upload "addedImage" {
+                    displayType VIEW_DISPLAY
+                },
+                text "shortDescription" {
+                    documentation "tell something about what the image is showing or standing for."
+                    mandatory false
+                    length 1000
+                }
+            }
+            actions {
+                mainAction "Index",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            ,
+                deleteAction "Delete"
+            }
+        },
+        entity "activity" leading {
+            documentation "Activities Indaus is able to offer or did already in the past"
+            nameMultiple "activities"
+            displayPattern "#title# #infoField1"
+            fields {
+                string "displayLanguage" locale {
+                    documentation "Select in which language the activity should be shown. Select \"all\" for every language."
+                    mandatory false
+                    displayType VIEW_SORTING
+                },
+                
+            string "title" {
+                    documentation "This is the title of your activity."
+                },
+                upload "titleImage" {
+                    documentation "The image should have a ratio of 3:1. The width should be not less than 1200px. The title image will be used at the top of the activity page."
+                    displayType DISPLAY
+                },
+                string "copyrightTitleImage" {
+                    mandatory false
+                    displayType DISPLAY
+                },
+                upload "referenceImage" {
+                    documentation "This image is the reference of the activity."
+                    mandatory false
+                    displayType VIEW_DISPLAY
+                },
+                string "copyrightReferenceImage" {
+                    mandatory false
+                    displayType DISPLAY
+                },
+                text "teaserDescription" {
+                    documentation "this description will be shown in the overview"
+                    displayType VIEW_DISPLAY
+                    length 500
+                },
+                text "activityDescription" {
+                    mandatory false
+                    displayType DISPLAY
+                    length 5000
+                },
+                string "infoField1" {
+                    documentation "You can use the infofields to display some special infos like the year of creation or the specific NC brand or whatever fits to the activity. The info field 1 will appear also inside the headline. All other info fields will not."
+                    mandatory false
+                    displayType DISPLAY
+                },
+                string "infoField2" {
+                    mandatory false
+                    displayType DISPLAY
+                },
+                string "infoField3" {
+                    mandatory false
+                    displayType DISPLAY
+                },
+                string "infoField4" {
+                    mandatory false
+                    displayType DISPLAY
+                },
+                string "infoField5" {
+                    mandatory false
+                    displayType DISPLAY
+                }
+            }
+            actions {
+                mainAction "Index",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            ,
+                deleteAction "Delete"
+            }
+        }
+    }
+    relations {
+        one2many bidirectional {
+            source "attachedImage"
+            sourceAlias "activity"
+            target "activity"
+            targetAlias "attachedImages"
+            editType ACTIVE_NONE_PASSIVE_CHOOSE
+        }
+    }
+}

@@ -1,0 +1,120 @@
+{# purpose of this template: module configuration page #}
+{% extends 'RKReferenceModule::adminBase.html.twig' %}
+{% block title __('Settings') %}
+{% block admin_page_icon 'wrench' %}
+{% block content %}
+    <div class="rkreferencemodule-config">
+        {% form_theme form with [
+            '@RKReferenceModule/Form/bootstrap_3.html.twig',
+            'ZikulaFormExtensionBundle:Form:form_div_layout.html.twig'
+        ] %}
+        {{ form_start(form) }}
+        <ul class="nav nav-pills">
+        {% set tabTitle = __('List views') %}
+        <li class="active" role="presentation">
+            <a id="vars1Tab" href="#tab1" title="{{ tabTitle|e('html_attr') }}" role="tab" data-toggle="tab">{{ tabTitle }}</a>
+        </li>
+        {% set tabTitle = __('Images') %}
+        <li class=" dropdown" role="presentation">
+            <a id="imagesTabDrop" class="dropdown-toggle" href="#" data-toggle="dropdown" aria-controls="imagesTabDropSections" aria-expanded="false">{{ tabTitle }}<span class="caret"></span></a>
+            <ul id="imagesTabDropSections" class="dropdown-menu" aria-labelledby="imagesTabDrop">
+            <li>
+                <a id="imagesAttachedImageAddedImageTab" href="#tabImagesAttachedImageAddedImage" role="tab" data-toggle="tab" aria-controls="tabImagesAttachedImageAddedImage">Attached images added image</a>
+            </li>
+            <li>
+                <a id="imagesActivityTitleImageTab" href="#tabImagesActivityTitleImage" role="tab" data-toggle="tab" aria-controls="tabImagesActivityTitleImage">Activities title image</a>
+            </li>
+            <li>
+                <a id="imagesActivityReferenceImageTab" href="#tabImagesActivityReferenceImage" role="tab" data-toggle="tab" aria-controls="tabImagesActivityReferenceImage">Activities reference image</a>
+            </li>
+            </ul>
+        </li>
+        </ul>
+
+        {{ form_errors(form) }}
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade in active" id="tab1" aria-labelledby="vars1Tab">
+                {% set tabTitle = __('List views') %}
+                <fieldset>
+                    <legend>{{ tabTitle }}</legend>
+                
+                    <p class="alert alert-info">{{ __('Here you can configure parameters for list views.')|nl2br }}</p>
+                
+                    {{ form_row(form.attachedImageEntriesPerPage) }}
+                    {{ form_row(form.linkOwnAttachedImagesOnAccountPage) }}
+                    {{ form_row(form.activityEntriesPerPage) }}
+                    {{ form_row(form.linkOwnActivitiesOnAccountPage) }}
+                </fieldset>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="tabImagesAttachedImageAddedImage" aria-labelledby="imagesAttachedImageAddedImageTab">
+                {% set tabTitle = __('Image settings for attached images added image') %}
+                <fieldset>
+                    <legend>{{ tabTitle }}</legend>
+            
+                    {{ form_row(form.enableShrinkingForAttachedImageAddedImage) }}
+                    <div id="shrinkDetailsAttachedImageAddedImage">
+                    {{ form_row(form.shrinkWidthAttachedImageAddedImage) }}
+                    {{ form_row(form.shrinkHeightAttachedImageAddedImage) }}
+                    </div>
+                    {{ form_row(form.thumbnailModeAttachedImageAddedImage) }}
+                    {{ form_row(form.thumbnailWidthAttachedImageAddedImageView) }}
+                    {{ form_row(form.thumbnailHeightAttachedImageAddedImageView) }}
+                    {{ form_row(form.thumbnailWidthAttachedImageAddedImageDisplay) }}
+                    {{ form_row(form.thumbnailHeightAttachedImageAddedImageDisplay) }}
+                    {{ form_row(form.thumbnailWidthAttachedImageAddedImageEdit) }}
+                    {{ form_row(form.thumbnailHeightAttachedImageAddedImageEdit) }}
+                </fieldset>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="tabImagesActivityTitleImage" aria-labelledby="imagesActivityTitleImageTab">
+                {% set tabTitle = __('Image settings for activities title image') %}
+                <fieldset>
+                    <legend>{{ tabTitle }}</legend>
+            
+                    {{ form_row(form.enableShrinkingForActivityTitleImage) }}
+                    <div id="shrinkDetailsActivityTitleImage">
+                    {{ form_row(form.shrinkWidthActivityTitleImage) }}
+                    {{ form_row(form.shrinkHeightActivityTitleImage) }}
+                    </div>
+                    {{ form_row(form.thumbnailModeActivityTitleImage) }}
+                    {{ form_row(form.thumbnailWidthActivityTitleImageView) }}
+                    {{ form_row(form.thumbnailHeightActivityTitleImageView) }}
+                    {{ form_row(form.thumbnailWidthActivityTitleImageDisplay) }}
+                    {{ form_row(form.thumbnailHeightActivityTitleImageDisplay) }}
+                    {{ form_row(form.thumbnailWidthActivityTitleImageEdit) }}
+                    {{ form_row(form.thumbnailHeightActivityTitleImageEdit) }}
+                </fieldset>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="tabImagesActivityReferenceImage" aria-labelledby="imagesActivityReferenceImageTab">
+                {% set tabTitle = __('Image settings for activities reference image') %}
+                <fieldset>
+                    <legend>{{ tabTitle }}</legend>
+            
+                    {{ form_row(form.enableShrinkingForActivityReferenceImage) }}
+                    <div id="shrinkDetailsActivityReferenceImage">
+                    {{ form_row(form.shrinkWidthActivityReferenceImage) }}
+                    {{ form_row(form.shrinkHeightActivityReferenceImage) }}
+                    </div>
+                    {{ form_row(form.thumbnailModeActivityReferenceImage) }}
+                    {{ form_row(form.thumbnailWidthActivityReferenceImageView) }}
+                    {{ form_row(form.thumbnailHeightActivityReferenceImageView) }}
+                    {{ form_row(form.thumbnailWidthActivityReferenceImageDisplay) }}
+                    {{ form_row(form.thumbnailHeightActivityReferenceImageDisplay) }}
+                    {{ form_row(form.thumbnailWidthActivityReferenceImageEdit) }}
+                    {{ form_row(form.thumbnailHeightActivityReferenceImageEdit) }}
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+                {{ form_widget(form.save) }}
+                {{ form_widget(form.cancel) }}
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+{% block footer %}
+    {{ parent() }}
+    {{ pageAddAsset('javascript', zasset('@RKReferenceModule:js/RKReferenceModule.Config.js')) }}
+{% endblock %}

@@ -1,0 +1,16 @@
+{# Purpose of this template: Display item information for previewing from other modules #}
+<dl id="attachedImage{{ attachedImage.id }}">
+<dt>{{ attachedImage.getTitleFromDisplayPattern()|notifyFilters('reference.filter_hooks.attachedimages.filter') }}</dt>
+<dd>{% if attachedImage.addedImageMeta|default %}
+<a href="{{ attachedImage.addedImageUrl }}" title="{{ attachedImage.getTitleFromDisplayPattern()|e('html_attr') }}"{% if attachedImage.addedImageMeta.isImage %} class="image-link"{% endif %}>
+{% if attachedImage.addedImageMeta.isImage %}
+    {% set thumbOptions = attribute(thumbRuntimeOptions, 'attachedImageAddedImage') %}
+    <img src="{{ attachedImage.addedImage.getPathname()|imagine_filter('zkroot', thumbOptions) }}" alt="{{ attachedImage.getTitleFromDisplayPattern()|e('html_attr') }}" width="{{ thumbOptions.thumbnail.size[0] }}" height="{{ thumbOptions.thumbnail.size[1] }}" class="img-thumbnail" />
+{% else %}
+    {{ __('Download') }} ({{ attachedImage.addedImageMeta.size|rkreferencemodule_fileSize(attachedImage.addedImage.getPathname(), false, false) }})
+{% endif %}
+</a>
+{% endif %}
+</dd>
+{% if attachedImage.shortDescription is not empty %}<dd>{{ attachedImage.shortDescription }}</dd>{% endif %}
+</dl>
