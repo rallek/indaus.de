@@ -8,6 +8,7 @@ admin:
       left: "Block:block.html.twig"
       right: "Block:block.html.twig"
       center: "Block:block.html.twig"
+      bottomnav: "Block:bottomnavblock.html.twig"
 home:
   page: ":home.html.twig"
   block:
@@ -16,6 +17,7 @@ home:
       right: "Block:block.html.twig"
       center: "Block:block.html.twig"
       topnav: "Block:topnavblock.html.twig"
+      bottomnav: "Block:bottomnavblock.html.twig"
 master:
   page: ":master.html.twig"
   block:
@@ -24,5 +26,6 @@ master:
       right: "Block:block.html.twig"
       center: "Block:block.html.twig"
       topnav: "Block:topnavblock.html.twig"
-bootstrapPath: themes/RK/IndausTheme/Resources/public/css/cerulean.min.css
+      bottomnav: "Block:bottomnavblock.html.twig"
+bootstrapPath: themes/RK/IndausTheme/Resources/public/css/indaus.css
 #blockWrapping: false
